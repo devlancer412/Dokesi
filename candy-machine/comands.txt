@@ -1,0 +1,15 @@
+ts-node ~/metaplex/js/packages/cli/src/candy-machine-v2-cli.ts upload -e devnet -k ~/.config/solana/devnet.json -cp config_pre.json -c example ./assets_default
+
+metaboss derive cmv2-creator <candy_machine_id>
+
+metaboss snapshot mints -c 748Rci9ENLLTkgKB9DaUU9DxWeKSJuz2YgW4ebpWMwun -r https://api.devnet.solana.com
+
+metaboss snapshot holders --creator 7eQYiE6Gvv1fsoLaF5HSSmuWA8MGdnU42o7iBs93SigH --v2 --output ./snapshot -r https://api.devnet.solana.com
+
+metaboss snapshot mints --creator 7eQYiE6Gvv1fsoLaF5HSSmuWA8MGdnU42o7iBs93SigH --v2 --output ./snapshot -r https://api.devnet.solana.com
+
+metaboss decode mint --account HS42WQSjLHRwMSr3cfxKByqySYQHfgiNrL4ZBiwyazQC -o ./config
+
+metaboss decode mint --list-file ./snapshot/7eQYiE6Gvv1fsoLaF5HSSmuWA8MGdnU42o7iBs93SigH_mint_accounts.json -o ./snapshot
+
+metaboss update uri --keypair ~/.config/solana/devnet.json --account HS42WQSjLHRwMSr3cfxKByqySYQHfgiNrL4ZBiwyazQC --new-uri https://gateway.pinata.cloud/ipfs/QmPochZCarisNknHy6hRMHV3L8vnqwMMWZPChGrTZruAZn/1.json

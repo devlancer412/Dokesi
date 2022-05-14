@@ -1,0 +1,31 @@
+{
+  "price": 1,
+  "number": 3333,
+  "gatekeeper": null,
+  "solTreasuryAccount": "8S8wf7xbT4jbjvz9gEKryZJiTggTtF8gSfu7wyEi5drp",
+  "splTokenAccount": null,
+  "splToken": null,
+  "goLiveDate": "28 Apr 2022 16:00:00 GMT",
+  "endSettings": {
+    "endSettingType": { "amount": true },
+    "value": 3333
+  },
+  "whitelistMintSettings": {
+    "mode": { "neverBurn": true },
+    "mint": "7nE1GmnMmDKiycFkpHF7mKtxt356FQzVonZqBWsTWZNf",
+    "presale": true,
+    "discountPrice": 0.5
+  },
+  "hiddenSettings": {
+    "name": "SCC",
+    "symbol": "CCC",
+    "uri": "https://solclones.mypinata.cloud/ipfs/QmV1uT7VmnLyzPsqL9Z6MREgH9eB8Eh4fkkHVPERX9SUm",
+    "hash": "00000000000000000"
+  },
+  "storage": "pinata",
+  "ipfsInfuraProjectId": null,
+  "ipfsInfuraSecret": null,
+  "awsS3Bucket": null,
+  "noRetainAuthority": false,
+  "noMutable": false
+}

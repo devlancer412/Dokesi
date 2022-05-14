@@ -1,0 +1,24 @@
+{
+  "price": 1.0,
+  "number": 1,
+  "gatekeeper": null,
+  "solTreasuryAccount": "AEdLU75h3mDvURbAStXaBsUchfdnHLUQ4sjRy7qH5pVr",
+  "splTokenAccount": null,
+  "splToken": null,
+  "goLiveDate": "25 Dec 2021 00:00:00 GMT",
+  "endSettings": null,
+  "whitelistMintSettings": null,
+  "hiddenSettings": {
+    "name": "Example NFT",
+    "symbol": "ENFT",
+    "uri": "https://gateway.pinata.cloud/ipfs/QmeHbqX2rgkDPo92n7dw5tTcrebwpuj2MY8FphWo6L94YN",
+    "hash": "4700CDE7B0CF18DA7D7C215D753627D9"
+  },
+  "storage": "pinata",
+  "ipfsInfuraProjectId": null,
+  "ipfsInfuraSecret": null,
+  "nftStorageKey": null,
+  "awsS3Bucket": null,
+  "noRetainAuthority": false,
+  "noMutable": false
+}

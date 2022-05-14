@@ -1,0 +1,22 @@
+{
+  "name": "candy-machine",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "DevLancer <DevAnderson0412@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@solana/spl-token": "^0.2.0",
+    "browserify": "^17.0.0",
+    "bs58": "^5.0.0",
+    "dotenv": "^16.0.0",
+    "fs": "^0.0.1-security",
+    "node-cmd": "^5.0.0",
+    "solana": "^1.0.4"
+  },
+  "scripts": {
+    "create-keypair": "node create-keypair.js",
+    "create": "node create_machine.js",
+    "prepare": "node prepare_metadata.js",
+    "reveal": "node reset-metadata.js"
+  }
+}

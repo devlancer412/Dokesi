@@ -1,0 +1,28 @@
+{
+  "price": 2.5,
+  "number": 1,
+  "gatekeeper": null,
+  "solTreasuryAccount": "AEdLU75h3mDvURbAStXaBsUchfdnHLUQ4sjRy7qH5pVr",
+  "splTokenAccount": null,
+  "splToken": null,
+  "goLiveDate": "5 May 2022 16:00:00 GMT",
+  "endSettings": { "endSettingType": { "amount": true }, "value": 1 },
+  "whitelistMintSettings": {
+    "mode": { "neverBurn": true },
+    "mint": "77GTpkKaF4PRTZZzfPkAk4gLUj4ap5QMRX5CVbDTXBMA",
+    "presale": true,
+    "discountPrice": 1.5
+  },
+  "hiddenSettings": {
+    "name": "Example NFT",
+    "symbol": "ENFT",
+    "uri": "https://gateway.pinata.cloud/ipfs/QmdrMihqz6E9sFJfBXhK6nKraddKT3eCAX58X3G3bGM9JK",
+    "hash": "1B8D4A55317C1BF774D51C99C7C97D33"
+  },
+  "storage": "pinata",
+  "ipfsInfuraProjectId": null,
+  "ipfsInfuraSecret": null,
+  "awsS3Bucket": null,
+  "noRetainAuthority": false,
+  "noMutable": false
+}
