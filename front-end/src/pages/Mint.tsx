@@ -46,7 +46,7 @@ const HeaderBack = styled.div`
   width: 100%;
   height: 104px;
   background: linear-gradient(93.48deg, #a22739 59.76%, #ff323c 174.66%);
-  @media only screen and (max-width: 1365px) {
+  @media only screen and (max-width: 1366px) {
     height: 88px;
   }
   @media only screen and (max-width: 750px) {

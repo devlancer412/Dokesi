@@ -83,7 +83,7 @@ const useStyles = makeStyles((theme: Theme) =>
 const Navbar = () => {
   const classes = useStyles();
   const wallet = useWallet();
-  const matchesMD = useMediaQuery("(max-width:1365px)");
+  const matchesMD = useMediaQuery("(max-width:1366px)");
   const matchesSM = useMediaQuery("(max-width:1100px)");
   const matchesXS = useMediaQuery("(max-width:750px)");
 

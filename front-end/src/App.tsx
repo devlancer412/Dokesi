@@ -25,6 +25,7 @@ import { ThemeProvider, Paper } from "@material-ui/core";
 
 import theme from "./components/Theme";
 import Footer from "./components/Footer";
+import Home from "./pages/Home";
 
 const getCandyMachineId = (): anchor.web3.PublicKey | undefined => {
   try {
@@ -69,6 +70,7 @@ const App = () => {
               <Paper style={{ backgroundColor: "black" }}>
                 <Navbar />
                 <Routes>
+                  <Route path="/" element={<Home />} />
                   <Route
                     path="/mint"
                     element={
