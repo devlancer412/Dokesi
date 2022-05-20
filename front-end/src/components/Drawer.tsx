@@ -46,19 +46,19 @@ const DrawerComponent = () => {
         classes={{ paper: classes.paper }}
       >
         <div className={classes.navlinks}>
-          <Link to="#" className={classes.link}>
+          <Link to="/#" className={classes.link}>
             Home
           </Link>
-          <Link to="#about" className={classes.link}>
+          <Link to="/#about" className={classes.link}>
             About us
           </Link>
-          <Link to="#contact" className={classes.link}>
+          <Link to="/#roadmap" className={classes.link}>
             Roadmap
           </Link>
-          <Link to="#faq" className={classes.link}>
+          <Link to="/#faq" className={classes.link}>
             FAQ
           </Link>
-          <Link to="#faq" className={classes.link}>
+          <Link to="/#faq" className={classes.link}>
             Team
           </Link>
         </div>
