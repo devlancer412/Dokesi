@@ -1,3 +1,16 @@
 .App {
   text-align: center;
 }
+
+@font-face {
+  font-family: "Londrina Solid";
+  src: local("Londrina Solid"),
+    url(./fonts/Londrina/LondrinaSolid-Black.ttf) format("woff");
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
+}
+
+* {
+  font-family: "Londrina Solid";
+  font-style: normal;
+}

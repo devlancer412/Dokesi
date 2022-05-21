@@ -88,10 +88,12 @@ const RightBox = styled.div`
   flex-direction: column;
   justify-content: space-around;
   margin-left: 100px;
+  font-family: "Londrina Solid";
+  font-style: normal;
 
   h1 {
     color: white;
-    font-size: 40px;
+    font-size: 48px;
     line-height: 100px;
   }
   @media only screen and (max-width: 1100px) {
@@ -385,7 +387,7 @@ const QueryLabelSub = styled.h1`
 
 const QueryForm = styled.form`
   width: 30%;
-  font-family: "Raleway";
+  font-family: "Londrina Solid";
   font-style: normal;
   font-size: 13px;
   font-stretch: 100%;
@@ -455,7 +457,7 @@ const QueryText = styled.textarea`
 `;
 
 const SendMsgBtn = styled.button`
-  font-family: "Roboto";
+  font-family: "Londrina Solid";
   font-style: normal;
   font-size: 13px;
   font-weight: 400;

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-scroll";
+import { useNavigate } from "react-router-dom";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -54,13 +55,13 @@ const useStyles = makeStyles((theme: Theme) =>
     title: {
       fontSize: "46px",
       lineHeight: "100px",
-      fontFamily: "LondrinaSolidBlack",
+      fontFamily: "Londrina Solid",
       fontWeight: 900,
       marginBottom: "4px",
       backgroundImage: `url("/assets/image/title-back.png")`,
       backgroundRepeat: "no-repeat",
       backgroundSize: "cover",
-      padding: "0px 92px",
+      padding: "0px 110px",
       "&:hover": {
         cursor: "pointer",
       },
@@ -90,12 +91,13 @@ const useStyles = makeStyles((theme: Theme) =>
 const Navbar = () => {
   const classes = useStyles();
   const wallet = useWallet();
+  const navigate = useNavigate();
   const matchesMD = useMediaQuery("(max-width:1366px)");
   const matchesSM = useMediaQuery("(max-width:1100px)");
   const matchesXS = useMediaQuery("(max-width:750px)");
 
   const goToHome = () => {
-    window.location.href = "/";
+    navigate("/");
   };
 
   const isMintPage = window.location.pathname === "/mint";

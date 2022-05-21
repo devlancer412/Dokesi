@@ -2,6 +2,7 @@ import styled, { keyframes } from "styled-components";
 import { AnimationOnScroll } from "react-animation-on-scroll";
 import { useState } from "react";
 import { useInView } from "react-intersection-observer";
+import { useNavigate } from "react-router-dom";
 
 //animation frames
 const BottomJumpKeyFrame = (lower: number, high: number) => keyframes`
@@ -1174,6 +1175,7 @@ const FaqData = [
 ];
 
 const Home = () => {
+  const navigate = useNavigate();
   const [faqIndex, setFaqIndex] = useState(-1);
   const { ref, inView, entry } = useInView({
     threshold: 0,
@@ -1189,7 +1191,7 @@ const Home = () => {
   };
 
   const goToMint = () => {
-    window.location.href = "/mint";
+    navigate("/mint");
   };
   return (
     <>

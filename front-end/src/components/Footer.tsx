@@ -3,6 +3,7 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import { useMediaQuery } from "@material-ui/core";
+import { useNavigate } from "react-router-dom";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -18,7 +19,7 @@ const useStyles = makeStyles((theme: Theme) =>
     title: {
       fontSize: "46px",
       lineHeight: "100px",
-      fontFamily: "LondrinaSolidBlack",
+      fontFamily: "Londrina Solid",
       fontWeight: 900,
       padding: "0px 40px",
       "&:hover": {
@@ -80,10 +81,11 @@ const useStyles = makeStyles((theme: Theme) =>
 
 const Footer = () => {
   const classes = useStyles();
+  const navigate = useNavigate();
   const matchesXS = useMediaQuery("(max-width:750px)");
 
   const goToHome = () => {
-    window.location.href = "/";
+    navigate("/");
   };
 
   return (
