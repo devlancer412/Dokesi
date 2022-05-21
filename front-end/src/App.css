@@ -4,12 +4,39 @@
 
 @font-face {
   font-family: "Londrina Solid";
+  font-weight: 900;
   src: local("Londrina Solid"),
     url(./fonts/Londrina/LondrinaSolid-Black.ttf) format("woff");
   /* other formats include: 'woff2', 'truetype, 'opentype',
                             'embedded-opentype', and 'svg' */
 }
 
+@font-face {
+  font-family: "Londrina Solid";
+  font-weight: 400;
+  src: local("Londrina Solid"),
+    url(./fonts/Londrina/LondrinaSolid-Regular.ttf) format("woff");
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
+}
+
+@font-face {
+  font-family: "Londrina Solid";
+  font-weight: 300;
+  src: local("Londrina Solid"),
+    url(./fonts/Londrina/LondrinaSolid-Light.ttf) format("woff");
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
+}
+
+@font-face {
+  font-family: "Londrina Solid";
+  font-weight: 100;
+  src: local("Londrina Solid"),
+    url(./fonts/Londrina/LondrinaSolid-Thin.ttf) format("woff");
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
+}
 * {
   font-family: "Londrina Solid";
   font-style: normal;

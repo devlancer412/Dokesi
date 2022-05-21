@@ -40,7 +40,7 @@ const ConnectButton = styled(WalletDialogButton)`
   background-size: 100% 60px;
   color: white;
   font-size: 20px;
-  font-weight: bold;
+  font-weight: 900;
   box-shadow: none;
   &:hover {
     background-color: transparent;
