@@ -2,7 +2,6 @@ import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
-import { useWallet } from "@solana/wallet-adapter-react";
 import { useMediaQuery } from "@material-ui/core";
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -22,6 +21,9 @@ const useStyles = makeStyles((theme: Theme) =>
       fontFamily: "LondrinaSolidBlack",
       fontWeight: 900,
       padding: "0px 40px",
+      "&:hover": {
+        cursor: "pointer",
+      },
     },
     copyright: {
       fontFamily: "Londrina Solid",
@@ -80,6 +82,10 @@ const Footer = () => {
   const classes = useStyles();
   const matchesXS = useMediaQuery("(max-width:750px)");
 
+  const goToHome = () => {
+    window.location.href = "/";
+  };
+
   return (
     <div className={classes.root}>
       <AppBar position="relative" className={classes.appbarClass}>
@@ -99,6 +105,7 @@ const Footer = () => {
           <Typography
             className={classes.copyright}
             style={matchesXS ? { order: 3 } : { flexGrow: 1 }}
+            onClick={goToHome}
           >
             Copyright @ 2022 Dokesi
           </Typography>

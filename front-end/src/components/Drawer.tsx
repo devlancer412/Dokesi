@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Drawer, IconButton, makeStyles, Theme } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
-import { Link } from "react-router-dom";
+import { Link } from "react-scroll";
 
 const useStyles = makeStyles((theme: Theme) => ({
   paper: {
@@ -46,19 +46,63 @@ const DrawerComponent = () => {
         classes={{ paper: classes.paper }}
       >
         <div className={classes.navlinks}>
-          <Link to="/#" className={classes.link}>
+          <Link
+            activeClass="active"
+            to="home"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+            className={classes.link}
+          >
             Home
           </Link>
-          <Link to="/#about" className={classes.link}>
+
+          <Link
+            activeClass="active"
+            to="about"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+            className={classes.link}
+          >
             About us
           </Link>
-          <Link to="/#roadmap" className={classes.link}>
+
+          <Link
+            activeClass="active"
+            to="roadmap"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+            className={classes.link}
+          >
             Roadmap
           </Link>
-          <Link to="/#faq" className={classes.link}>
+
+          <Link
+            activeClass="active"
+            to="faq"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+            className={classes.link}
+          >
             FAQ
           </Link>
-          <Link to="/#faq" className={classes.link}>
+
+          <Link
+            activeClass="active"
+            to="team"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+            className={classes.link}
+          >
             Team
           </Link>
         </div>

@@ -36,10 +36,17 @@ const ConnectButton = styled(WalletDialogButton)`
   height: 60px;
   margin-top: 10px;
   margin-bottom: 5px;
-  background: linear-gradient(180deg, #604ae5 0%, #813eee 100%);
+  background: url("/assets/image/redbtn-back.png");
+  background-size: 100% 60px;
   color: white;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
+  box-shadow: none;
+  &:hover {
+    background-color: transparent;
+    cursor: pointer;
+    box-shadow: none;
+  }
 `;
 
 const HeaderBack = styled.div`

@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-scroll";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -61,6 +61,9 @@ const useStyles = makeStyles((theme: Theme) =>
       backgroundRepeat: "no-repeat",
       backgroundSize: "cover",
       padding: "0px 92px",
+      "&:hover": {
+        cursor: "pointer",
+      },
     },
     navlinks: {
       margin: "0px 90px",
@@ -91,10 +94,16 @@ const Navbar = () => {
   const matchesSM = useMediaQuery("(max-width:1100px)");
   const matchesXS = useMediaQuery("(max-width:750px)");
 
+  const goToHome = () => {
+    window.location.href = "/";
+  };
+
+  const isMintPage = window.location.pathname === "/mint";
+
   return (
     <div className={classes.root}>
       <AppBar position="fixed" className={classes.appbarClass}>
-        <Toolbar style={{ padding: "0px" }}>
+        <Toolbar style={{ padding: "0px", justifyContent: "space-between" }}>
           <Typography
             className={classes.title}
             style={
@@ -113,37 +122,84 @@ const Navbar = () => {
                   }
                 : {}
             }
+            onClick={goToHome}
           >
             DOKESI
           </Typography>
-          <div style={{ flexGrow: 1 }}>
-            {matchesXS ? (
-              <DrawerComponent />
-            ) : (
-              <div
-                className={classes.navlinks}
-                style={{
-                  margin: `${matchesMD ? "0px 10px 0px 0px" : "0px 90px"}`,
-                }}
-              >
-                <Link to="/#" className={classes.link}>
-                  Home
-                </Link>
-                <Link to="/#about" className={classes.link}>
-                  About us
-                </Link>
-                <Link to="/#roadmap" className={classes.link}>
-                  Roadmap
-                </Link>
-                <Link to="/#faq" className={classes.link}>
-                  FAQ
-                </Link>
-                <Link to="/#faq" className={classes.link}>
-                  Team
-                </Link>
-              </div>
-            )}
-          </div>
+          {isMintPage ? null : (
+            <div style={{ flexGrow: 1 }}>
+              {matchesXS ? (
+                <DrawerComponent />
+              ) : (
+                <div
+                  className={classes.navlinks}
+                  style={{
+                    margin: `${matchesMD ? "0px 10px 0px 0px" : "0px 90px"}`,
+                  }}
+                >
+                  <Link
+                    activeClass="active"
+                    to="home"
+                    spy={true}
+                    smooth={true}
+                    offset={-70}
+                    duration={500}
+                    className={classes.link}
+                  >
+                    Home
+                  </Link>
+
+                  <Link
+                    activeClass="active"
+                    to="about"
+                    spy={true}
+                    smooth={true}
+                    offset={-70}
+                    duration={500}
+                    className={classes.link}
+                  >
+                    About us
+                  </Link>
+
+                  <Link
+                    activeClass="active"
+                    to="roadmap"
+                    spy={true}
+                    smooth={true}
+                    offset={-70}
+                    duration={500}
+                    className={classes.link}
+                  >
+                    Roadmap
+                  </Link>
+
+                  <Link
+                    activeClass="active"
+                    to="faq"
+                    spy={true}
+                    smooth={true}
+                    offset={-70}
+                    duration={500}
+                    className={classes.link}
+                  >
+                    FAQ
+                  </Link>
+
+                  <Link
+                    activeClass="active"
+                    to="team"
+                    spy={true}
+                    smooth={true}
+                    offset={-70}
+                    duration={500}
+                    className={classes.link}
+                  >
+                    Team
+                  </Link>
+                </div>
+              )}
+            </div>
+          )}
           {!wallet.connected ? (
             <ConnectButton
               style={{ display: `${matchesSM ? "none" : "block"}` }}

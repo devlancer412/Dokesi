@@ -4,14 +4,19 @@ import { useState } from "react";
 import { useInView } from "react-intersection-observer";
 
 //animation frames
-const JumpKeyFrame = (lower: number, high: number) => keyframes`
+const BottomJumpKeyFrame = (lower: number, high: number) => keyframes`
 0%   { bottom: ${lower}px; }
 100% { bottom: ${high}px; }
 `;
 
+const TopJumpKeyFrame = (lower: number, high: number) => keyframes`
+0%   { top: ${high}px; }
+100% { top: ${lower}px; }
+`;
+
 const BorderKeyFrame = (length: number, width: number) => keyframes`
-  0% {clip: rect(0px, 0px, 500px, -${length}px); }
-  100% {clip: rect(0px, ${width + length}px, 500px, ${width}px); }
+  0% {clip: rect(0px, 0px, 800px, -${length}px); }
+  100% {clip: rect(0px, ${width + length}px, 800px, ${width}px); }
 `;
 
 const ShadowKeyFrame = keyframes`
@@ -39,7 +44,7 @@ const BackManKeyFrame = keyframes`
 
 const CarouselKeyFrame = keyframes`
   0% {margin-left: 0px}
-  100% {margin-left: -100%}
+  100% {margin-left: -1500px}
 `;
 
 const BackLetterKeyFrame = keyframes`
@@ -69,13 +74,21 @@ const HomeContainer = styled.div`
   padding-top: 150px;
   padding-bottom: 100px;
   box-sizing: border-box;
+  @media only screen and (max-width: 900px) {
+    height: 800px;
+    background-size: 100% 800px;
+  }
+  @media only screen and (max-width: 500px) {
+    height: 1000px;
+    background-size: 100% 1000px;
+  }
 `;
 
 const TitlePart = styled.div`
   width: 50%;
   margin: 0px;
   margin-left: 200px;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -141,17 +154,47 @@ const TitlePart = styled.div`
       font-size: 12px;
     }
   }
+  @media only screen and (max-width: 900px) {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 230px;
+  }
+
+  @media only screen and (max-width: 700px) {
+    margin-bottom: 300px;
+  }
+
+  @media only screen and (max-width: 420px) {
+    h5 {
+      font-size: 12px;
+    }
+    h1 {
+      font-size: 28px;
+      line-height: 44px;
+    }
+    p {
+      font-size: 8px;
+    }
+  }
 `;
 
 const ConnectButton = styled.div`
-  box-sizing: border-box;
-  padding: 10px 30px;
-  border-radius: 5px;
-  background: linear-gradient(119.91deg, #a22739 40.24%, #ff323c 117.62%);
-  position: relative;
-
+  margin-top: 10px;
+  margin-bottom: 5px;
+  padding: 20px 50px;
+  background: url("/assets/image/redbtn-back.png");
+  background-size: 100% 65px;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  box-shadow: none;
   &:hover {
+    background-color: transparent;
     cursor: pointer;
+    box-shadow: none;
   }
 `;
 
@@ -190,7 +233,7 @@ const HomeMan = styled.img`
   position: absolute;
   width: 400px;
   right: 95px;
-  animation: ${JumpKeyFrame(7, 40)} 1s ease-in-out infinite alternate;
+  animation: ${BottomJumpKeyFrame(10, 40)} 1s ease-in-out infinite alternate;
 
   @media only screen and (max-width: 1366px) {
     width: 350px;
@@ -200,6 +243,20 @@ const HomeMan = styled.img`
   @media only screen and (max-width: 1100px) {
     width: 300px;
     right: 70px;
+  }
+
+  @media only screen and (max-width: 900px) {
+    animation: ${BottomJumpKeyFrame(-180, -150)} 1s ease-in-out infinite
+      alternate;
+  }
+  @media only screen and (max-width: 500px) {
+    animation: ${BottomJumpKeyFrame(-330, -300)} 1s ease-in-out infinite
+      alternate;
+  }
+  @media only screen and (max-width: 380px) {
+    width: 80%;
+    left: 50%;
+    transform: translate(-50%, 0px);
   }
 `;
 
@@ -269,7 +326,9 @@ const BB = styled.div`
 `;
 
 const AboutBox = styled.div`
-  margin: 100px 200px 100px 300px;
+  box-sizing: border-box;
+  margin: 100px auto;
+  width: 850px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -301,6 +360,25 @@ const AboutBox = styled.div`
     width: 100%;
     margin: 0px;
   }
+  @media only screen and (max-width: 900px) {
+    padding: 200px 100px 40px 100px;
+    align-items: center;
+    width: 90%;
+    margin-top: 200px;
+    h4,
+    p {
+      text-align: center;
+    }
+  }
+
+  @media only screen and (max-width: 530px) {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  @media only screen and (max-width: 320px) {
+    padding-top: 100px;
+  }
 `;
 
 const FlyPane = styled.div`
@@ -315,13 +393,33 @@ const FlyPane = styled.div`
   background: #d62d3a;
   border-radius: 90px;
   animation: ${FlyKeyFrame} 2s ease-in-out infinite alternate;
+  @media only screen and (max-width: 900px) {
+    top: -100px;
+    left: 20%;
+  }
+  @media only screen and (max-width: 600px) {
+    left: 10%;
+  }
+  @media only screen and (max-width: 420px) {
+    left: 0px;
+    width: 70vw;
+    height: 50vw;
+  }
 `;
 
 const AboutUsMan = styled.img`
   position: absolute;
   width: 350px;
   left: -40px;
-  animation: ${JumpKeyFrame(17, 50)} 2s ease-in-out infinite alternate;
+  animation: ${BottomJumpKeyFrame(17, 50)} 2s ease-in-out infinite alternate;
+  @media only screen and (max-width: 900px) {
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: ${TopJumpKeyFrame(-70, -40)} 2s ease-in-out infinite alternate;
+  }
+  @media only screen and (max-width: 420px) {
+    width: 80vw;
+  }
 `;
 
 const BackMan1 = styled.img`
@@ -331,13 +429,16 @@ const BackMan1 = styled.img`
   transform: translate(-50%, 0px);
   animation: ${BackManKeyFrame} 5s linear infinite;
   z-index: 0;
+  @media only screen and (max-width: 380px) {
+    width: 240px;
+  }
 `;
 
 const TrendingContainer = styled.div`
   width: 100%;
   background-color: transparent;
   background-image: url("/assets/image/home-back2.png");
-  background-size: 100%;
+  background-size: 100% 100%;
   z-index: 3;
   display: flex;
   flex-direction: column;
@@ -359,6 +460,7 @@ const TrendingContainer = styled.div`
     letter-spacing: 2px;
     margin: 10px 0px;
     text-transform: uppercase;
+    text-align: center;
   }
   p {
     font-weight: 300;
@@ -369,6 +471,36 @@ const TrendingContainer = styled.div`
     margin: 0px;
     width: 40%;
     text-align: center;
+  }
+
+  @media only screen and (max-width: 900px) {
+    h1 {
+      font-size: 48px;
+      line-height: 52px;
+    }
+    p {
+      width: 80%;
+    }
+  }
+
+  @media only screen and (max-width: 520px) {
+    h1 {
+      font-size: 44px;
+      line-height: 48px;
+    }
+    p {
+      width: 90%;
+    }
+  }
+
+  @media only screen and (max-width: 420px) {
+    h1 {
+      font-size: 40px;
+      line-height: 44px;
+    }
+    p {
+      width: 90%;
+    }
   }
 `;
 
@@ -407,7 +539,6 @@ const CarouselView = styled.div`
 `;
 
 const CarouselPane = styled.div`
-  width: 300%;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -455,6 +586,16 @@ const RoadmapContainer = styled.div`
     width: 60%;
     text-align: center;
   }
+
+  @media only screen and (max-width: 520px) {
+    h1 {
+      font-size: 44px;
+      line-height: 48px;
+    }
+    p {
+      width: 90%;
+    }
+  }
 `;
 
 const Roadmap = styled.div`
@@ -466,10 +607,18 @@ const Roadmap = styled.div`
   width: 80%;
   height: 1500px;
   background: url("/assets/image/roadmap-line-gray.png");
-  background-size: 100% 1500px;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
   margin-top: 50px;
   position: relative;
+  @media only screen and (max-width: 1366px) {
+    width: 90%;
+  }
+  @media only screen and (max-width: 900px) {
+    background-image: none;
+    padding-top: 0px;
+    height: auto;
+  }
 `;
 
 const RoadmapBackLine = styled.div`
@@ -483,6 +632,9 @@ const RoadmapBackLine = styled.div`
   background-repeat: no-repeat;
   animation: ${RoadmapKeyFrame(2000, 1500)} 20s ease-in-out;
   z-index: 0;
+  @media only screen and (max-width: 900px) {
+    display: none;
+  }
 `;
 
 interface RoadmapItemProps {
@@ -562,6 +714,36 @@ const RoadmapItem = styled.div<RoadmapItemProps>`
     right: ${(props: RoadmapItemProps) =>
       props.float === "right" ? "0px" : "auto"};
   }
+
+  @media only screen and (max-width: 1100px) {
+    div {
+      h4 {
+        margin-top: 0px;
+      }
+      p {
+        font-size: 12px;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 900px) {
+    width: 80%;
+    margin: 30px auto;
+    flex-direction: column;
+    align-items: center;
+    div {
+      align-items: center;
+      h4 {
+        text-align: center;
+      }
+      p {
+        text-align: center;
+      }
+    }
+    &::before {
+      display: none;
+    }
+  }
 `;
 
 const BackMan2 = styled.img`
@@ -571,6 +753,9 @@ const BackMan2 = styled.img`
   transform: translate(-50%, 0px);
   top: 10px;
   z-index: 0;
+  @media only screen and (max-width: 380px) {
+    width: 240px;
+  }
 `;
 
 const BackLetterView = styled.div`
@@ -584,11 +769,12 @@ const BackLetterView = styled.div`
 `;
 
 const BackLetterPane = styled.div`
-  width: 400%;
+  width: 1000%;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: center;
+  text-overflow: hidden;
   animation: ${BackLetterKeyFrame} 2s ease-in-out infinite alternate;
   font-family: "Londrina Solid";
   font-style: normal;
@@ -602,6 +788,11 @@ const BackLetterPane = styled.div`
   color: gray;
 
   opacity: 0.21;
+
+  @media only screen and (max-width: 900px) {
+    font-size: 260px;
+    line-height: 300px;
+  }
 `;
 
 const FAQContainer = styled.div`
@@ -614,7 +805,7 @@ const FAQContainer = styled.div`
   background-image: url("/assets/image/home-back3.png");
   background-repeat: no-repeat;
   background-color: transparent;
-  background-size: 100% auto;
+  background-size: 100% 100%;
   padding: 100px 0px;
 
   h5 {
@@ -641,6 +832,16 @@ const FAQContainer = styled.div`
     margin: 0px;
     width: 60%;
     text-align: center;
+  }
+
+  @media only screen and (max-width: 520px) {
+    h1 {
+      font-size: 44px;
+      line-height: 48px;
+    }
+    p {
+      width: 90%;
+    }
   }
 `;
 
@@ -681,6 +882,20 @@ const ClosedFAQ = styled.div`
   &:hover {
     cursor: pointer;
   }
+
+  @media only screen and (max-width: 1100px) {
+    h3 {
+      font-size: 28px;
+    }
+  }
+
+  @media only screen and (max-width: 420px) {
+    padding: 20px;
+    h3 {
+      font-size: 20px;
+      margin: 10px 0px;
+    }
+  }
 `;
 
 const OpenedFAQ = styled.div`
@@ -703,6 +918,7 @@ const OpenedFAQ = styled.div`
 
     letter-spacing: 0.03em;
     text-transform: capitalize;
+    margin-top: 0px;
   }
   p {
     font-weight: 300;
@@ -719,6 +935,24 @@ const OpenedFAQ = styled.div`
 
   &:hover {
     cursor: pointer;
+  }
+
+  @media only screen and (max-width: 1100px) {
+    h3 {
+      font-size: 28px;
+    }
+    p {
+      font-size: 12px;
+    }
+  }
+  @media only screen and (max-width: 420px) {
+    padding: 20px;
+    h3 {
+      font-size: 20px;
+    }
+    p {
+      font-size: 8px;
+    }
   }
 `;
 
@@ -780,6 +1014,17 @@ const TeamContainer = styled.div`
     margin: 10px 0px;
     text-transform: uppercase;
   }
+  @media only screen and (max-width: 900px) {
+    height: auto;
+    background-size: 100% 100%;
+    padding-bottom: 0px;
+  }
+  @media only screen and (max-width: 520px) {
+    h1 {
+      font-size: 44px;
+      line-height: 48px;
+    }
+  }
 `;
 
 const MemberContainer = styled.div`
@@ -796,6 +1041,9 @@ const MemberContainer = styled.div`
 
   &:nth-child(2n) {
     animation-delay: 1s;
+  }
+  @media only screen and (max-width: 900px) {
+    flex-wrap: wrap;
   }
 `;
 
@@ -945,7 +1193,7 @@ const Home = () => {
   };
   return (
     <>
-      <HomeContainer>
+      <HomeContainer id="home">
         <TitlePart>
           <h5>Dokesi is a PFP for short film animation.</h5>
           <h1>
@@ -956,7 +1204,7 @@ const Home = () => {
             spend here, the more thrilling your experience will be
           </p>
           <ConnectButton onClick={goToMint}>
-            <BBButton />
+            {/* <BBButton /> */}
             Mint Now
           </ConnectButton>
         </TitlePart>
