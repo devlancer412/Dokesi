@@ -1253,117 +1253,89 @@ const Home = () => {
           <CarouselPane>
             <CarouselItem>
               <img src="/assets/image/home-man5.png" alt="man1" />
-              <h4>Man1</h4>
             </CarouselItem>
             <CarouselItem>
               <img src="/assets/image/home-man6.png" alt="man1" />
-              <h4>Man1</h4>
             </CarouselItem>
             <CarouselItem>
               <img src="/assets/image/home-man3.png" alt="man1" />
-              <h4>Man1</h4>
             </CarouselItem>
             <CarouselItem>
               <img src="/assets/image/home-man4.png" alt="man1" />
-              <h4>Man1</h4>
             </CarouselItem>
             <CarouselItem>
               <img src="/assets/image/home-man5.png" alt="man1" />
-              <h4>Man1</h4>
             </CarouselItem>
             <CarouselItem>
               <img src="/assets/image/home-man6.png" alt="man1" />
-              <h4>Man1</h4>
             </CarouselItem>
             <CarouselItem>
               <img src="/assets/image/home-man3.png" alt="man1" />
-              <h4>Man1</h4>
             </CarouselItem>
             <CarouselItem>
               <img src="/assets/image/home-man4.png" alt="man1" />
-              <h4>Man1</h4>
             </CarouselItem>
             <CarouselItem>
               <img src="/assets/image/home-man5.png" alt="man1" />
-              <h4>Man1</h4>
             </CarouselItem>
             <CarouselItem>
               <img src="/assets/image/home-man6.png" alt="man1" />
-              <h4>Man1</h4>
             </CarouselItem>
             <CarouselItem>
               <img src="/assets/image/home-man3.png" alt="man1" />
-              <h4>Man1</h4>
             </CarouselItem>
             <CarouselItem>
               <img src="/assets/image/home-man4.png" alt="man1" />
-              <h4>Man1</h4>
             </CarouselItem>
             <CarouselItem>
               <img src="/assets/image/home-man5.png" alt="man1" />
-              <h4>Man1</h4>
             </CarouselItem>
             <CarouselItem>
               <img src="/assets/image/home-man6.png" alt="man1" />
-              <h4>Man1</h4>
             </CarouselItem>
           </CarouselPane>
           <CarouselPane style={{ animationDelay: "1s" }}>
             <CarouselItem>
               <img src="/assets/image/home-man5.png" alt="man1" />
-              <h4>Man1</h4>
             </CarouselItem>
             <CarouselItem>
               <img src="/assets/image/home-man6.png" alt="man1" />
-              <h4>Man1</h4>
             </CarouselItem>
             <CarouselItem>
               <img src="/assets/image/home-man3.png" alt="man1" />
-              <h4>Man1</h4>
             </CarouselItem>
             <CarouselItem>
               <img src="/assets/image/home-man4.png" alt="man1" />
-              <h4>Man1</h4>
             </CarouselItem>
             <CarouselItem>
               <img src="/assets/image/home-man5.png" alt="man1" />
-              <h4>Man1</h4>
             </CarouselItem>
             <CarouselItem>
               <img src="/assets/image/home-man6.png" alt="man1" />
-              <h4>Man1</h4>
             </CarouselItem>
             <CarouselItem>
               <img src="/assets/image/home-man3.png" alt="man1" />
-              <h4>Man1</h4>
             </CarouselItem>
             <CarouselItem>
               <img src="/assets/image/home-man4.png" alt="man1" />
-              <h4>Man1</h4>
             </CarouselItem>
             <CarouselItem>
               <img src="/assets/image/home-man5.png" alt="man1" />
-              <h4>Man1</h4>
             </CarouselItem>
             <CarouselItem>
               <img src="/assets/image/home-man6.png" alt="man1" />
-              <h4>Man1</h4>
             </CarouselItem>
             <CarouselItem>
               <img src="/assets/image/home-man3.png" alt="man1" />
-              <h4>Man1</h4>
             </CarouselItem>
             <CarouselItem>
               <img src="/assets/image/home-man4.png" alt="man1" />
-              <h4>Man1</h4>
             </CarouselItem>
             <CarouselItem>
               <img src="/assets/image/home-man5.png" alt="man1" />
-              <h4>Man1</h4>
             </CarouselItem>
             <CarouselItem>
               <img src="/assets/image/home-man6.png" alt="man1" />
-              <h4>Man1</h4>
             </CarouselItem>
           </CarouselPane>
         </CarouselView>
