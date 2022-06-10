@@ -31,10 +31,8 @@ const keypairPath = process.env.SECRETKEY_PATH;
 const secretKey = new Uint8Array(require(keypairPath));
 const whitelist = require(`./${process.env.WHITELIST_PATH}`);
 
-const connection = new Connection(
-  clusterApiUrl(process.env.CLUSTER_API_URL),
-  "confirmed"
-);
+const connection = new Connection(process.env.RPC_URL, "processed");
+
 const payer = Keypair.fromSecretKey(secretKey);
 
 console.log(bs58.encode(secretKey));
@@ -165,7 +163,7 @@ const sleep = async (ms) => {
         homeDir
       );
     // Upload candy machine
-    let cmd = `${candyMachine} upload -e ${process.env.CLUSTER_API_URL} -k ${keypairPath} -cp config_pre.json -c ${process.env.CANDY_MACHINE_NAME} ./assets_default`;
+    let cmd = `${candyMachine} upload -e ${process.env.RPC_URL} -k ${keypairPath} -cp config_pre.json -c ${process.env.CANDY_MACHINE_NAME} ./assets_default`;
 
     console.log("Creating candy machine....");
     let result = await runCommand(cmd);
@@ -173,14 +171,14 @@ const sleep = async (ms) => {
     console.log(result);
     // Update candy machine
     console.log("Updating candy machine....");
-    cmd = `${candyMachine} update_candy_machine -e ${process.env.CLUSTER_API_URL} -k ${keypairPath} -cp config_ultra.json -c ${process.env.CANDY_MACHINE_NAME}`;
+    cmd = `${candyMachine} update_candy_machine -e ${process.env.RPC_URL} -k ${keypairPath} -cp config_ultra.json -c ${process.env.CANDY_MACHINE_NAME}`;
 
     result = await runCommand(cmd);
 
     console.log(result);
 
     console.log("Getting candy machine setting....");
-    cmd = `${candyMachine} show -e ${process.env.CLUSTER_API_URL} -k ${keypairPath} -c ${process.env.CANDY_MACHINE_NAME}`;
+    cmd = `${candyMachine} show -e ${process.env.RPC_URL} -k ${keypairPath} -c ${process.env.CANDY_MACHINE_NAME}`;
 
     result = await runCommand(cmd);
 
