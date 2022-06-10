@@ -1,1 +1,27 @@
-{"name":"Example NFT #0","symbol":"ENFT","description":"This is an eye NFT","seller_fee_basis_points":1000,"image":"https://ipfs.io/ipfs/undefined","attributes":[{"trait_type":"Background","value":"Black"},{"trait_type":"Eyeball","value":"White"},{"trait_type":"Eye color","value":"Yellow"},{"trait_type":"Iris","value":"Small"},{"trait_type":"Shine","value":"Shapes"},{"trait_type":"Bottom lid","value":"Middle"},{"trait_type":"Top lid","value":"Middle"}],"properties":{"files":[{"uri":"https://ipfs.io/ipfs/undefined","type":"image/png"}],"category":"image","creators":[{"address":"AEdLU75h3mDvURbAStXaBsUchfdnHLUQ4sjRy7qH5pVr","share":100}]},"collection":{"name":"numbers","family":"numbers"}}
+{
+  "name": "Example NFT #0",
+  "symbol": "ENFT",
+  "description": "This is an eye NFT",
+  "seller_fee_basis_points": 1000,
+  "image": "https://ipfs.io/ipfs/undefined",
+  "attributes": [
+    { "trait_type": "Background", "value": "Black" },
+    { "trait_type": "Eyeball", "value": "White" },
+    { "trait_type": "Eye color", "value": "Yellow" },
+    { "trait_type": "Iris", "value": "Small" },
+    { "trait_type": "Shine", "value": "Shapes" },
+    { "trait_type": "Bottom lid", "value": "Middle" },
+    { "trait_type": "Top lid", "value": "Middle" }
+  ],
+  "properties": {
+    "files": [{ "uri": "https://ipfs.io/ipfs/undefined", "type": "image/png" }],
+    "category": "image",
+    "creators": [
+      {
+        "address": "AEdLU75h3mDvURbAStXaBsUchfdnHLUQ4sjRy7qH5pVr",
+        "share": 100
+      }
+    ]
+  },
+  "collection": { "name": "numbers", "family": "numbers" }
+}

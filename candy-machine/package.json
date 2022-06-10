@@ -15,7 +15,7 @@
   },
   "scripts": {
     "create-keypair": "node create-keypair.js",
-    "create": "node create_machine.js",
+    "create:machine": "node create_machine.js",
     "prepare": "node prepare_metadata.js",
     "reveal": "node reset-metadata.js"
   }

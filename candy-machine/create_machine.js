@@ -25,7 +25,8 @@ const { runCommand } = require("./utils/cmd");
 const homeDir = os.homedir();
 console.log(homeDir);
 
-const keypairPath = process.env.KEYPAIR_PATH.replace("~", homeDir);
+// const keypairPath = process.env.KEYPAIR_PATH.replace("~", homeDir);
+const keypairPath = process.env.SECRETKEY_PATH;
 
 const secretKey = new Uint8Array(require(keypairPath));
 const whitelist = require(`./${process.env.WHITELIST_PATH}`);
@@ -39,6 +40,10 @@ const payer = Keypair.fromSecretKey(secretKey);
 console.log(bs58.encode(secretKey));
 
 console.log("Connected to wallet:", payer.publicKey.toString());
+
+const sleep = async (ms) => {
+  return new Promise((r) => setTimeout(r, ms));
+};
 
 (async () => {
   try {
@@ -60,7 +65,7 @@ console.log("Connected to wallet:", payer.publicKey.toString());
     console.log("Created spl-token:", mint.toBase58());
 
     fs.writeFileSync(
-      `${process.env.SPLTOKEN}`,
+      `${process.env.SPLTOKEN_PATH}`,
       `module.exports="${mint.toBase58()}"`
     );
 
@@ -79,7 +84,7 @@ console.log("Connected to wallet:", payer.publicKey.toString());
       mint,
       tokenAccount.address,
       payer.publicKey,
-      whitelist.length
+      3 * whitelist.length
     );
 
     const tokenAccountInfo = await getAccount(connection, tokenAccount.address);
@@ -100,18 +105,28 @@ console.log("Connected to wallet:", payer.publicKey.toString());
       )
     );
 
-    const distributeResult = await Promise.all(
-      tokenAccountsTo.map((account) => {
-        return transfer(
-          connection,
-          payer,
-          tokenAccount.address,
-          account.address,
-          payer.publicKey,
-          1
-        );
-      })
-    );
+    for (const account of tokenAccountsTo) {
+      await transfer(
+        connection,
+        payer,
+        tokenAccount.address,
+        account.address,
+        payer.publicKey,
+        3
+      );
+    }
+    // const distributeResult = await Promise.all(
+    //   tokenAccountsTo.map((account) => {
+    //     return transfer(
+    //       connection,
+    //       payer,
+    //       tokenAccount.address,
+    //       account.address,
+    //       payer.publicKey,
+    //       3
+    //     );
+    //   })
+    // );
 
     const tokenAccountInfos = await Promise.all(
       tokenAccountsTo.map((account) => getAccount(connection, account.address))
@@ -124,6 +139,7 @@ console.log("Connected to wallet:", payer.publicKey.toString());
     /// Setting config data
     config.price = parseFloat(process.env.MINT_PRICE);
     config.number = 1;
+    config.goLiveDate = process.env.GOLIVE_DATE;
     config.endSettings.endSettingType.amount = true;
     config.endSettings.value = 1;
     config.solTreasuryAccount = process.env.TREASURY_ACCOUNT;

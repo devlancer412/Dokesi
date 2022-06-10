@@ -1,37 +1,47 @@
 {
-  "name": "Example NFT #0",
-  "symbol": "ENFT",
-  "description": "This is an eye NFT",
+  "name": "Dokesi #0",
+  "symbol": "DKS",
+  "description": "Dokesi is a PFP inspired by short film animation, with rich and unique rare features, dozens of rare avatars, costumes, and color schemes.",
   "seller_fee_basis_points": 1000,
   "image": "0.png",
+  "external_url": "https://www.youtube.com/c/hashlipsnft",
+  "edition": 0,
   "attributes": [
     {
-      "trait_type": "Background",
-      "value": "Black"
+      "trait_type": "background",
+      "value": "light black"
     },
     {
-      "trait_type": "Eyeball",
-      "value": "White"
+      "trait_type": "Special",
+      "value": "Star"
     },
     {
-      "trait_type": "Eye color",
-      "value": "Yellow"
+      "trait_type": "Skin",
+      "value": "brown skin"
     },
     {
-      "trait_type": "Iris",
-      "value": "Small"
+      "trait_type": "Clothing",
+      "value": "beige coat"
     },
     {
-      "trait_type": "Shine",
-      "value": "Shapes"
+      "trait_type": "Eye",
+      "value": "eyes closed"
     },
     {
-      "trait_type": "Bottom lid",
-      "value": "Middle"
+      "trait_type": "Mouth",
+      "value": "open mouth"
     },
     {
-      "trait_type": "Top lid",
-      "value": "Middle"
+      "trait_type": "Props",
+      "value": "Bracelet"
+    },
+    {
+      "trait_type": "Hair",
+      "value": "White star black round cap"
+    },
+    {
+      "trait_type": "Hand",
+      "value": "basketball"
     }
   ],
   "properties": {
@@ -44,10 +54,9 @@
     "category": "image",
     "creators": [
       {
-        "address": "AEdLU75h3mDvURbAStXaBsUchfdnHLUQ4sjRy7qH5pVr",
+        "address": "BA4cUKFfA243hxdE9BGHWQhsuYxFwjA5KZZC6yR9cEVu",
         "share": 100
       }
     ]
-  },
-  "collection": { "name": "numbers", "family": "numbers" }
+  }
 }
