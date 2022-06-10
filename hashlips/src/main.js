@@ -339,94 +339,117 @@ const startCreating = async () => {
   let editionCount = 1;
   let failedCount = 0;
   let abstractedIndexes = [];
-  for (
-    let i = network == NETWORK.sol ? 0 : 1;
-    i <= layerConfigurations[layerConfigurations.length - 1].growEditionSizeTo;
-    i++
-  ) {
+
+  let totalEditionSize =
+    layerConfigurations[layerConfigurations.length - 1].growEditionSizeTo;
+  for (let i = network == NETWORK.sol ? 0 : 1; i <= totalEditionSize; i++) {
     abstractedIndexes.push(i);
   }
+
   if (shuffleLayerConfigurations) {
     abstractedIndexes = shuffle(abstractedIndexes);
   }
+
   debugLogs
     ? console.log("Editions left to create: ", abstractedIndexes)
     : null;
-  while (layerConfigIndex < layerConfigurations.length) {
-    const layers = layersSetup(
-      layerConfigurations[layerConfigIndex].layersOrder
-    );
-    while (
-      editionCount <= layerConfigurations[layerConfigIndex].growEditionSizeTo
-    ) {
-      let newDna = createDna(layers);
-      if (isDnaUnique(dnaList, newDna)) {
-        let results = constructLayerToDna(newDna, layers);
-        let loadedElements = [];
 
-        results.forEach((layer) => {
-          loadedElements.push(loadLayerImg(layer));
-        });
+  const layersList = layerConfigurations.map((config) =>
+    layersSetup(config.layersOrder)
+  );
 
-        await Promise.all(loadedElements).then((renderObjectArray) => {
-          debugLogs ? console.log("Clearing canvas") : null;
-          ctx.clearRect(0, 0, format.width, format.height);
-          if (gif.export) {
-            hashlipsGiffer = new HashlipsGiffer(
-              canvas,
-              ctx,
-              `${buildDir}/gifs/${abstractedIndexes[0]}.gif`,
-              gif.repeat,
-              gif.quality,
-              gif.delay
-            );
-            hashlipsGiffer.start();
-          }
-          if (background.generate) {
-            drawBackground();
-          }
-          renderObjectArray.forEach((renderObject, index) => {
-            drawElement(
-              renderObject,
-              index,
-              layerConfigurations[layerConfigIndex].layersOrder.length
-            );
-            if (gif.export) {
-              hashlipsGiffer.add();
-            }
-          });
-          if (gif.export) {
-            hashlipsGiffer.stop();
-          }
-          debugLogs
-            ? console.log("Editions left to create: ", abstractedIndexes)
-            : null;
-          saveImage(abstractedIndexes[0]);
-          addMetadata(newDna, abstractedIndexes[0]);
-          saveMetaDataSingleFile(abstractedIndexes[0]);
-          console.log(
-            `Created edition: ${abstractedIndexes[0]}, with DNA: ${sha1(
-              newDna
-            )}`
-          );
-        });
-        dnaList.add(filterDNAOptions(newDna));
-        editionCount++;
-        abstractedIndexes.shift();
-      } else {
-        console.log("DNA exists!");
-        failedCount++;
-        if (failedCount >= uniqueDnaTorrance) {
-          console.log(
-            `You need more layers or elements to grow your edition to ${layerConfigurations[layerConfigIndex].growEditionSizeTo} artworks!`
-          );
-          process.exit();
-        }
+  const raritySpace = layerConfigurations.map(
+    (config) => config.growEditionSizeTo
+  );
+
+  raritySpace.unshift(0);
+  let goldList = [];
+  let zombieList = [];
+
+  while (editionCount <= totalEditionSize) {
+    const randomValue = Math.floor(Math.random() * 100000) % totalEditionSize;
+    let layerIndex = 0;
+    for (let i = 0; i < raritySpace.length - 1; i++) {
+      if (raritySpace[i] <= randomValue && randomValue < raritySpace[i + 1]) {
+        layerIndex = i;
+        break;
       }
     }
-    layerConfigIndex++;
+    if (layerIndex == 2 || layerIndex == 3) {
+      goldList.push(abstractedIndexes[0]);
+    } else if (layerIndex == 4 || layerIndex == 5) {
+      zombieList.push(abstractedIndexes[0]);
+    }
+
+    const layers = layersList[layerIndex];
+
+    let newDna = createDna(layers);
+    if (isDnaUnique(dnaList, newDna)) {
+      let results = constructLayerToDna(newDna, layers);
+      let loadedElements = [];
+
+      results.forEach((layer) => {
+        loadedElements.push(loadLayerImg(layer));
+      });
+
+      await Promise.all(loadedElements).then((renderObjectArray) => {
+        debugLogs ? console.log("Clearing canvas") : null;
+        ctx.clearRect(0, 0, format.width, format.height);
+        if (gif.export) {
+          hashlipsGiffer = new HashlipsGiffer(
+            canvas,
+            ctx,
+            `${buildDir}/gifs/${abstractedIndexes[0]}.gif`,
+            gif.repeat,
+            gif.quality,
+            gif.delay
+          );
+          hashlipsGiffer.start();
+        }
+        if (background.generate) {
+          drawBackground();
+        }
+        renderObjectArray.forEach((renderObject, index) => {
+          drawElement(
+            renderObject,
+            index,
+            layerConfigurations[layerConfigIndex].layersOrder.length
+          );
+          if (gif.export) {
+            hashlipsGiffer.add();
+          }
+        });
+        if (gif.export) {
+          hashlipsGiffer.stop();
+        }
+        debugLogs
+          ? console.log("Editions left to create: ", abstractedIndexes)
+          : null;
+        saveImage(abstractedIndexes[0]);
+        addMetadata(newDna, abstractedIndexes[0]);
+        saveMetaDataSingleFile(abstractedIndexes[0]);
+        console.log(
+          `Created edition: ${abstractedIndexes[0]}, with DNA: ${sha1(newDna)}`
+        );
+      });
+      dnaList.add(filterDNAOptions(newDna));
+      editionCount++;
+      abstractedIndexes.shift();
+    } else {
+      console.log("DNA exists!");
+      failedCount++;
+      if (failedCount >= uniqueDnaTorrance) {
+        console.log(
+          `You need more layers or elements to grow your edition to ${layerConfigurations[layerConfigIndex].growEditionSizeTo} artworks!`
+        );
+        process.exit();
+      }
+    }
   }
+
   writeMetaData(JSON.stringify(metadataList, null, 2));
+  console.log(goldList);
+  console.log(zombieList);
 };
 
 module.exports = { startCreating, buildSetup, getElements };

@@ -5,18 +5,23 @@ const { NETWORK } = require(`${basePath}/constants/network.js`);
 const network = NETWORK.sol;
 
 // General metadata for Ethereum
-const namePrefix = "Your Collection";
-const description = "Remember to replace this description";
+const namePrefix = "Dokesi";
+const description =
+  "Dokesi is a PFP inspired by short film animation, with rich and unique rare features, dozens of rare avatars, costumes, and color schemes.";
 const baseUri = "ipfs://NewUriToReplace";
 
 const solanaMetadata = {
-  symbol: "YC",
-  seller_fee_basis_points: 1000, // Define how much % you want from secondary market sales 1000 = 10%
+  symbol: "DKS",
+  seller_fee_basis_points: 1000,
   external_url: "https://www.youtube.com/c/hashlipsnft",
   creators: [
     {
-      address: "7fXNuer5sbZtaTEPhtJ5g5gNtuyRoKkvxdjEjEnPN4mC",
-      share: 100,
+      address: "BA4cUKFfA243hxdE9BGHWQhsuYxFwjA5KZZC6yR9cEVu",
+      share: 50,
+    },
+    {
+      address: "n8MrDdXmVTVTcvEU1zoKnZnaH2o5GJCmEEHUgU5pN2U",
+      share: 50,
     },
   ],
 };
@@ -24,15 +29,219 @@ const solanaMetadata = {
 // If you have selected Solana then the collection starts from 0 automatically
 const layerConfigurations = [
   {
-    growEditionSizeTo: 2700,
+    // common male
+    growEditionSizeTo: 3480,
     layersOrder: [
-      { name: "Background" },
-      { name: "Eyeball" },
-      { name: "Eye color" },
-      { name: "Iris" },
-      { name: "Shine" },
-      { name: "Bottom lid" },
-      { name: "Top lid" },
+      { name: "background" },
+      { name: "Special" },
+      { name: "Skin" },
+      {
+        name: "male clothing",
+        options: {
+          displayName: "Clothing",
+        },
+      },
+      { name: "Eye" },
+      { name: "Mouth" },
+      {
+        name: "male props",
+        options: {
+          displayName: "Props",
+        },
+      },
+      {
+        name: "male hair",
+        options: {
+          displayName: "Hair",
+        },
+      },
+      { name: "Hand" },
+    ],
+  },
+  {
+    // common female
+    growEditionSizeTo: 6960,
+    layersOrder: [
+      { name: "background" },
+      { name: "Special" },
+      { name: "Skin" },
+      {
+        name: "female clothing",
+        options: {
+          displayName: "Clothing",
+        },
+      },
+      { name: "Eye" },
+      { name: "Mouth" },
+      {
+        name: "female props",
+        options: {
+          displayName: "Props",
+        },
+      },
+      {
+        name: "female hair",
+        options: {
+          displayName: "Hair",
+        },
+      },
+      { name: "Hand" },
+    ],
+  },
+  {
+    // gold male
+    growEditionSizeTo: 7360,
+    layersOrder: [
+      { name: "background" },
+      { name: "Special" },
+      { name: "Skin" },
+      {
+        name: "gold male clothing",
+        options: {
+          displayName: "Clothing",
+        },
+      },
+      {
+        name: "gold eye",
+        options: {
+          displayName: "Eye",
+        },
+      },
+      { name: "Mouth" },
+      {
+        name: "gold male props",
+        options: {
+          displayName: "Props",
+        },
+      },
+      {
+        name: "gold male hair",
+        options: {
+          displayName: "Hair",
+        },
+      },
+      {
+        name: "gold hand",
+        options: {
+          displayName: "Hand",
+        },
+      },
+    ],
+  },
+  {
+    // gold female
+    growEditionSizeTo: 7760,
+    layersOrder: [
+      { name: "background" },
+      { name: "Special" },
+      { name: "Skin" },
+      {
+        name: "gold female clothing",
+        options: {
+          displayName: "Clothing",
+        },
+      },
+      {
+        name: "gold eye",
+        options: {
+          displayName: "Eye",
+        },
+      },
+      { name: "Mouth" },
+      {
+        name: "gold female props",
+        options: {
+          displayName: "Props",
+        },
+      },
+      {
+        name: "gold female hair",
+        options: {
+          displayName: "Hair",
+        },
+      },
+      {
+        name: "gold hand",
+        options: {
+          displayName: "Hand",
+        },
+      },
+    ],
+  },
+  {
+    // zombie male
+    growEditionSizeTo: 7880,
+    layersOrder: [
+      { name: "background" },
+      { name: "Special" },
+      {
+        name: "zombie skin",
+        options: {
+          displayName: "Skin",
+        },
+      },
+      {
+        name: "zombie female clothing",
+        options: {
+          displayName: "Clothing",
+        },
+      },
+      {
+        name: "female props",
+        options: {
+          displayName: "Props",
+        },
+      },
+      {
+        name: "female hair",
+        options: {
+          displayName: "Hair",
+        },
+      },
+      {
+        name: "zombie hand",
+        options: {
+          displayName: "Hand",
+        },
+      },
+    ],
+  },
+  {
+    // zombie female
+    growEditionSizeTo: 8000,
+    layersOrder: [
+      { name: "background" },
+      { name: "Special" },
+      {
+        name: "zombie skin",
+        options: {
+          displayName: "Skin",
+        },
+      },
+      {
+        name: "zombie male clothing",
+        options: {
+          displayName: "Clothing",
+        },
+      },
+      {
+        name: "zombie hand",
+        options: {
+          displayName: "Hand",
+        },
+      },
+      {
+        name: "male props",
+        options: {
+          displayName: "Props",
+        },
+      },
+      {
+        name: "male hair",
+        options: {
+          displayName: "Hair",
+        },
+      },
     ],
   },
 ];
@@ -42,8 +251,8 @@ const shuffleLayerConfigurations = false;
 const debugLogs = false;
 
 const format = {
-  width: 512,
-  height: 512,
+  width: 2450,
+  height: 2450,
   smoothing: false,
 };
 
