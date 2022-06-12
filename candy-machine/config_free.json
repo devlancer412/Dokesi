@@ -1,0 +1,31 @@
+{
+    "price": 1,
+    "number": 1,
+    "gatekeeper": null,
+    "solTreasuryAccount": "8S8wf7xbT4jbjvz9gEKryZJiTggTtF8gSfu7wyEi5drp",
+    "splTokenAccount": null,
+    "splToken": null,
+    "goLiveDate": "28 Apr 2022 16:00:00 GMT",
+    "endSettings": {
+        "endSettingType": { "amount": true },
+        "value":1
+    },
+    "whitelistMintSettings": {
+        "mode" : { "burnEveryTime": true },
+        "mint" : "3Va2nDiGYW4YwGKA7v9KyhWtrs1BXrVDhZakLDTTGqMM",
+        "presale" : true,
+        "discountPrice" : 0
+    },
+    "hiddenSettings": {
+        "name":"SolClones ",
+        "symbol": "CLONE",
+        "uri":"https://solclones.mypinata.cloud/ipfs/QmV1uT7VmnLyzPsqL9Z6MREgH9eB8Eh4fkkHVPERX9SUmt",
+        "hash":"637B8989C6470AEB53D56CCE45C3362F"
+    },
+    "storage": "arweave",
+    "ipfsInfuraProjectId": null,
+    "ipfsInfuraSecret": null,
+    "awsS3Bucket": null,
+    "noRetainAuthority": false,
+    "noMutable": false
+}

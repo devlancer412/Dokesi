@@ -4,59 +4,19 @@
   "description": "Dokesi is a PFP inspired by short film animation, with rich and unique rare features, dozens of rare avatars, costumes, and color schemes.",
   "seller_fee_basis_points": 1000,
   "image": "0.png",
-  "external_url": "https://www.youtube.com/c/hashlipsnft",
+  "external_url": "https://dokesi.io/",
   "edition": 0,
-  "attributes": [
-    {
-      "trait_type": "background",
-      "value": "light black"
-    },
-    {
-      "trait_type": "Special",
-      "value": "Star"
-    },
-    {
-      "trait_type": "Skin",
-      "value": "brown skin"
-    },
-    {
-      "trait_type": "Clothing",
-      "value": "beige coat"
-    },
-    {
-      "trait_type": "Eye",
-      "value": "eyes closed"
-    },
-    {
-      "trait_type": "Mouth",
-      "value": "open mouth"
-    },
-    {
-      "trait_type": "Props",
-      "value": "Bracelet"
-    },
-    {
-      "trait_type": "Hair",
-      "value": "White star black round cap"
-    },
-    {
-      "trait_type": "Hand",
-      "value": "basketball"
-    }
-  ],
+  "attributes": [],
   "properties": {
-    "files": [
-      {
-        "uri": "0.png",
-        "type": "image/png"
-      }
-    ],
+    "files": [{ "uri": "0.png", "type": "image/png" }],
     "category": "image",
     "creators": [
       {
         "address": "BA4cUKFfA243hxdE9BGHWQhsuYxFwjA5KZZC6yR9cEVu",
-        "share": 100
-      }
+        "share": 50
+      },
+      { "address": "n8MrDdXmVTVTcvEU1zoKnZnaH2o5GJCmEEHUgU5pN2U", "share": 50 }
     ]
-  }
+  },
+  "collection": { "name": "Dokesi", "family": "Dokesi" }
 }

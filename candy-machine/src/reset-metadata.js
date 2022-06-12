@@ -1,15 +1,15 @@
 require("dotenv").config();
 const fs = require("fs");
 const os = require("os");
-const candyMachine = require("./.cache/devnet-NFTExample.json");
+const candyMachine = require(`../.cache/${process.env.NET_NAME}-${process.env.CANDY_MACHINE_NAME}.json`);
 
-const { runCommand } = require("./utils/cmd");
+const { runCommand } = require("../utils/cmd");
 
 const homeDir = os.homedir();
 const gName = process.env.NFT_NAME;
-const keyPairPath = process.env.KEYPAIR_PATH.replace("~", homeDir);
+const keyPairPath = process.cwd().replaceAll("\\", "/") + process.env.SECRETKEY_PATH;;
 const rpcUrl = process.env.RPC_URL;
-const imageDirUrl = process.env.IMAGE_DIR_PATH;
+const imageDirUrl = process.env.METADATA_DIR_PATH + "/";
 
 (async () => {
   let cmd = `metaboss derive cmv2-creator ${candyMachine.program.candyMachine} -r ${rpcUrl}`;

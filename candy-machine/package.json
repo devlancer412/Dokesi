@@ -14,9 +14,9 @@
     "solana": "^1.0.4"
   },
   "scripts": {
-    "create-keypair": "node create-keypair.js",
-    "create:machine": "node create_machine.js",
-    "prepare": "node prepare_metadata.js",
-    "reveal": "node reset-metadata.js"
+    "create-keypair": "node ./src/create-keypair.js",
+    "create:machine": "node ./src/create_machine.js",
+    "prepare": "node ./src/prepare_metadata.js",
+    "reveal": "node ./src/reset-metadata.js"
   }
 }

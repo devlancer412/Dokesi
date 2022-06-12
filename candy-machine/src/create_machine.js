@@ -1,8 +1,9 @@
 require("dotenv").config();
 const fs = require("fs");
 const os = require("os");
-const config = require("./config.json");
+const config = require("../config.json");
 const bs58 = require("bs58");
+
 
 const {
   createMint,
@@ -20,16 +21,18 @@ const {
   PublicKey,
 } = require("@solana/web3.js");
 
-const { runCommand } = require("./utils/cmd");
+const { runCommand } = require("../utils/cmd");
 
-const homeDir = os.homedir();
+const homeDir = os.homedir().replaceAll("\\", "/");
 console.log(homeDir);
+const keyPath = process.cwd().replaceAll("\\", "/") + process.env.SECRETKEY_PATH;
+console.log(keyPath);
 
 // const keypairPath = process.env.KEYPAIR_PATH.replace("~", homeDir);
-const keypairPath = process.env.SECRETKEY_PATH;
+const keypairPath = "../" + process.env.SECRETKEY_PATH;
 
 const secretKey = new Uint8Array(require(keypairPath));
-const whitelist = require(`./${process.env.WHITELIST_PATH}`);
+const whitelist = require(`..${process.env.WHITELIST_PATH}`);
 
 const connection = new Connection(process.env.RPC_URL, "processed");
 
@@ -61,11 +64,6 @@ const sleep = async (ms) => {
     const mint = await createMint(connection, payer, payer.publicKey, null, 0);
 
     console.log("Created spl-token:", mint.toBase58());
-
-    fs.writeFileSync(
-      `${process.env.SPLTOKEN_PATH}`,
-      `module.exports="${mint.toBase58()}"`
-    );
 
     const tokenAccount = await getOrCreateAssociatedTokenAccount(
       connection,
@@ -163,22 +161,24 @@ const sleep = async (ms) => {
         homeDir
       );
     // Upload candy machine
-    let cmd = `${candyMachine} upload -e ${process.env.RPC_URL} -k ${keypairPath} -cp config_pre.json -c ${process.env.CANDY_MACHINE_NAME} ./assets_default`;
+    let cmd = `${candyMachine} upload -e ${process.env.NET_NAME} --rpc-url ${process.env.RPC_URL} -k ${keyPath} -cp config_pre.json -c ${process.env.CANDY_MACHINE_NAME} ./assets_default`;
 
     console.log("Creating candy machine....");
+    console.log(cmd);
     let result = await runCommand(cmd);
 
     console.log(result);
     // Update candy machine
     console.log("Updating candy machine....");
-    cmd = `${candyMachine} update_candy_machine -e ${process.env.RPC_URL} -k ${keypairPath} -cp config_ultra.json -c ${process.env.CANDY_MACHINE_NAME}`;
+    console.log(cmd);
+    cmd = `${candyMachine} update_candy_machine -e ${process.env.NET_NAME} --rpc-url ${process.env.RPC_URL} -k ${keyPath} -cp config_ultra.json -c ${process.env.CANDY_MACHINE_NAME}`;
 
     result = await runCommand(cmd);
 
     console.log(result);
 
     console.log("Getting candy machine setting....");
-    cmd = `${candyMachine} show -e ${process.env.RPC_URL} -k ${keypairPath} -c ${process.env.CANDY_MACHINE_NAME}`;
+    cmd = `${candyMachine} show -e ${process.env.NET_NAME} --rpc-url ${process.env.RPC_URL} -k ${keyPath} -c ${process.env.CANDY_MACHINE_NAME}`;
 
     result = await runCommand(cmd);
 
@@ -187,3 +187,5 @@ const sleep = async (ms) => {
     console.log(err);
   }
 })();
+
+

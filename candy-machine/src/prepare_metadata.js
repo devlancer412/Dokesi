@@ -10,13 +10,26 @@ if (!Array.isArray(files)) {
   console.log("There is an err");
 }
 
+const creators = [];
+creators.push({
+  address: process.env.TREASURY_ACCOUNT,
+  share: 50,
+});
+creators.push({
+  address: process.env.SECONDARY_TREASURY,
+  share: 50,
+});
+
 for (file of files) {
   const filePath = jsonDir + "/" + file;
   const metaData = require(filePath);
 
-  metaData.image = process.env.IMAGE_DIR_PATH + metaData.image;
-  metaData.external_url = metaData.image;
+  console.log(file);
+  metaData.image =
+    process.env.IMAGE_DIR_PATH + "/" + file.split(".")[0] + ".json";
+  metaData.external_url = process.env.EXTERNAL_URL;
   metaData.properties.files.uri = metaData.image;
+  metaData.properties.creators = creators;
   console.log(file + "->" + metaData.image);
 
   fs.writeFileSync(filePath, JSON.stringify(metaData), "utf8");
