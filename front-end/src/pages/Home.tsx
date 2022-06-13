@@ -1142,7 +1142,7 @@ const FaqData = [
   {
     question: "How many Dokesi are there?",
     answer:
-      "Our genesis collection consists of 6668 unique 1/1 characters who live on the Solana Blockchain. They are all hand-drawn, 100% original, and randomly generated through the script.",
+      "Our genesis collection consists of 2000 unique 1/1 characters who live on the Solana Blockchain. They are all hand-drawn, 100% original, and randomly generated through the script.",
   },
   {
     question: "When was the Dokesi mint？",
@@ -1168,9 +1168,9 @@ const FaqData = [
     answer: "Three mint per wallet is allowed per allowlist winner.",
   },
   {
-    question: "How are these 6,668 Dokesi distributed?",
+    question: "How are these 2,000 Dokesi distributed?",
     answer:
-      "6,500: To the whitelist winner mints <br>168: Future cooperation, marketing, and sweepstakes",
+      "1,900: To the whitelist winner mints 100: Future cooperation, marketing, and sweepstakes",
   },
 ];
 
@@ -1202,8 +1202,8 @@ const Home = () => {
             discover best <RedSpane>digital art</RedSpane> and collect nfts
           </h1>
           <p>
-            This is the lair of the faceless spirit skulls. The more time you
-            spend here, the more thrilling your experience will be
+            This is a place to share fun anecdotes from life. The more time you
+            spend, the more exhilarating the experience will be.
           </p>
           <ConnectButton onClick={goToMint}>
             {/* <BBButton /> */}
@@ -1216,20 +1216,20 @@ const Home = () => {
         <h5>
           <RedSpane>About US</RedSpane>
         </h5>
-        <h1>About dokesi.art</h1>
+        <h1>About Dokesi.art</h1>
         <p>
-          This is the lair of the faceless spirit skulls. The more time you
-          spend here, the more thrilling your experience will be
+          This is a place to share fun anecdotes from life. The more time you
+          spend, the more exhilarating the experience will be.
         </p>
         <AboutBox>
           <h4>
             <RedSpane>dokesi.art</RedSpane>
           </h4>
           <p>
-            Dokesi is a PFP designed for short film animation. It launches 6,668
+            Dokesi is a PFP designed for short film animation. It launches 2,000
             independent digital NFT collections on Solana blockchain, with rich,
             diverse and unique rare features, dozens of rare headshots, costumes
-            and color schemes. We started with 6,668 PFP, and the world of
+            and color schemes. We started with 2,000 PFP, and the world of
             Dokesi is constantly expanding. The new experience of Dokesi is only
             open to holders. With the expansion of the universe, our brand is
             constantly developing.
@@ -1246,8 +1246,8 @@ const Home = () => {
           Treanding <RedSpane>this week</RedSpane>
         </h1>
         <p>
-          This is the lair of the faceless spirit skulls. The more time you
-          spend here, the more thrilling your experience will be
+          This is a place to share fun anecdotes from life. The more time you
+          spend, the more exhilarating the experience will be.
         </p>
         <CarouselView>
           <CarouselPane>
@@ -1352,11 +1352,11 @@ const Home = () => {
         </h5>
         <h1>Roadmap</h1>
         <p>
-          It's now time for the human race to repay the Azuki's favor by saving
-          them from Shirokinja slavery, which won't come without a cost.
-          However, rather than blood, wars, and death, we bring you a seamless
-          approach to save them. Every purchase from this collection can free an
-          azuki. It's the least you can do for humans' greatest defenders.
+          Now has come to the most critical moment, the dokesi waits for the
+          salvation of mankind, bringing them to the land of freedom, which will
+          not come without cost. What we offer you, however, is a seamless way
+          to save them, and every purchase is the least you can do for the
+          defenders of humanity.
         </p>
         <Roadmap ref={ref}>
           <RoadmapBackLine
@@ -1396,11 +1396,11 @@ const Home = () => {
           Have any <RedSpane>Question?</RedSpane>
         </h1>
         <p>
-          It's now time for the human race to repay the Azuki's favor by saving
-          them from Shirokinja slavery, which won't come without a cost.
-          However, rather than blood, wars, and death, we bring you a seamless
-          approach to save them. Every purchase from this collection can free an
-          azuki. It's the least you can do for humans' greatest defenders.
+          Now has come to the most critical moment, the dokesi waits for the
+          salvation of mankind, bringing them to the land of freedom, which will
+          not come without cost. What we offer you, however, is a seamless way
+          to save them, and every purchase is the least you can do for the
+          defenders of humanity.
         </p>
         <FAQList>
           {FaqData.map((data: any, index: number) => {

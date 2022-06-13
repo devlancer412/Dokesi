@@ -908,7 +908,10 @@ const Mint = (props: MintProps) => {
                               variant="caption"
                               align="center"
                               display="block"
-                              style={{ fontWeight: "bold" }}
+                              style={{
+                                fontWeight: "bold",
+                                color: "rgb(150,150,150)",
+                              }}
                             >
                               TO END OF MINT
                             </Typography>
@@ -937,7 +940,10 @@ const Mint = (props: MintProps) => {
                                   variant="caption"
                                   align="center"
                                   display="block"
-                                  style={{ fontWeight: "bold" }}
+                                  style={{
+                                    fontWeight: "bold",
+                                    color: "rgb(150,150,150)",
+                                  }}
                                 >
                                   UNTIL PUBLIC MINT
                                 </Typography>
