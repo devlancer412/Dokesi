@@ -518,7 +518,7 @@ const CarouselItem = styled.div`
     border-radius: 300px;
     background-color: white;
     box-shadow: 0px 20px black;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     position: relative;
   }
   h4 {
@@ -1252,90 +1252,90 @@ const Home = () => {
         <CarouselView>
           <CarouselPane>
             <CarouselItem>
-              <img src="/assets/image/home-man5.png" alt="man1" />
+              <img src="/assets/dokesis/dokesi0.png" alt="man1" />
             </CarouselItem>
             <CarouselItem>
-              <img src="/assets/image/home-man6.png" alt="man1" />
+              <img src="/assets/dokesis/dokesi1.png" alt="man1" />
             </CarouselItem>
             <CarouselItem>
-              <img src="/assets/image/home-man3.png" alt="man1" />
+              <img src="/assets/dokesis/dokesi2.png" alt="man1" />
             </CarouselItem>
             <CarouselItem>
-              <img src="/assets/image/home-man4.png" alt="man1" />
+              <img src="/assets/dokesis/dokesi3.png" alt="man1" />
             </CarouselItem>
             <CarouselItem>
-              <img src="/assets/image/home-man5.png" alt="man1" />
+              <img src="/assets/dokesis/dokesi4.png" alt="man1" />
             </CarouselItem>
             <CarouselItem>
-              <img src="/assets/image/home-man6.png" alt="man1" />
+              <img src="/assets/dokesis/dokesi5.png" alt="man1" />
             </CarouselItem>
             <CarouselItem>
-              <img src="/assets/image/home-man3.png" alt="man1" />
+              <img src="/assets/dokesis/dokesi6.png" alt="man1" />
             </CarouselItem>
             <CarouselItem>
-              <img src="/assets/image/home-man4.png" alt="man1" />
+              <img src="/assets/dokesis/dokesi7.png" alt="man1" />
             </CarouselItem>
             <CarouselItem>
-              <img src="/assets/image/home-man5.png" alt="man1" />
+              <img src="/assets/dokesis/dokesi8.png" alt="man1" />
             </CarouselItem>
             <CarouselItem>
-              <img src="/assets/image/home-man6.png" alt="man1" />
+              <img src="/assets/dokesis/dokesi9.png" alt="man1" />
             </CarouselItem>
             <CarouselItem>
-              <img src="/assets/image/home-man3.png" alt="man1" />
+              <img src="/assets/dokesis/dokesi10.png" alt="man1" />
             </CarouselItem>
             <CarouselItem>
-              <img src="/assets/image/home-man4.png" alt="man1" />
+              <img src="/assets/dokesis/dokesi11.png" alt="man1" />
             </CarouselItem>
             <CarouselItem>
-              <img src="/assets/image/home-man5.png" alt="man1" />
+              <img src="/assets/dokesis/dokesi0.png" alt="man1" />
             </CarouselItem>
             <CarouselItem>
-              <img src="/assets/image/home-man6.png" alt="man1" />
+              <img src="/assets/dokesis/dokesi1.png" alt="man1" />
             </CarouselItem>
           </CarouselPane>
           <CarouselPane style={{ animationDelay: "1s" }}>
             <CarouselItem>
-              <img src="/assets/image/home-man5.png" alt="man1" />
+              <img src="/assets/dokesis/dokesi11.png" alt="man1" />
             </CarouselItem>
             <CarouselItem>
-              <img src="/assets/image/home-man6.png" alt="man1" />
+              <img src="/assets/dokesis/dokesi10.png" alt="man1" />
             </CarouselItem>
             <CarouselItem>
-              <img src="/assets/image/home-man3.png" alt="man1" />
+              <img src="/assets/dokesis/dokesi9.png" alt="man1" />
             </CarouselItem>
             <CarouselItem>
-              <img src="/assets/image/home-man4.png" alt="man1" />
+              <img src="/assets/dokesis/dokesi8.png" alt="man1" />
             </CarouselItem>
             <CarouselItem>
-              <img src="/assets/image/home-man5.png" alt="man1" />
+              <img src="/assets/dokesis/dokesi7.png" alt="man1" />
             </CarouselItem>
             <CarouselItem>
-              <img src="/assets/image/home-man6.png" alt="man1" />
+              <img src="/assets/dokesis/dokesi6.png" alt="man1" />
             </CarouselItem>
             <CarouselItem>
-              <img src="/assets/image/home-man3.png" alt="man1" />
+              <img src="/assets/dokesis/dokesi5.png" alt="man1" />
             </CarouselItem>
             <CarouselItem>
-              <img src="/assets/image/home-man4.png" alt="man1" />
+              <img src="/assets/dokesis/dokesi4.png" alt="man1" />
             </CarouselItem>
             <CarouselItem>
-              <img src="/assets/image/home-man5.png" alt="man1" />
+              <img src="/assets/dokesis/dokesi3.png" alt="man1" />
             </CarouselItem>
             <CarouselItem>
-              <img src="/assets/image/home-man6.png" alt="man1" />
+              <img src="/assets/dokesis/dokesi2.png" alt="man1" />
             </CarouselItem>
             <CarouselItem>
-              <img src="/assets/image/home-man3.png" alt="man1" />
+              <img src="/assets/dokesis/dokesi1.png" alt="man1" />
             </CarouselItem>
             <CarouselItem>
-              <img src="/assets/image/home-man4.png" alt="man1" />
+              <img src="/assets/dokesis/dokesi0.png" alt="man1" />
             </CarouselItem>
             <CarouselItem>
-              <img src="/assets/image/home-man5.png" alt="man1" />
+              <img src="/assets/dokesis/dokesi11.png" alt="man1" />
             </CarouselItem>
             <CarouselItem>
-              <img src="/assets/image/home-man6.png" alt="man1" />
+              <img src="/assets/dokesis/dokesi10.png" alt="man1" />
             </CarouselItem>
           </CarouselPane>
         </CarouselView>
@@ -1419,28 +1419,26 @@ const Home = () => {
         </FAQList>
       </FAQContainer>
       <TeamContainer id="team">
-        <h5>
-          <RedSpane>About us</RedSpane>
-        </h5>
+        <h5>About us</h5>
         <h1>Dokesi.art Team</h1>
         <MemberContainer>
           <TeamMember>
-            <img src="/assets/image/home-man3.png" alt="team member" />
+            <img src="/assets/dokesis/dokesi6.png" alt="team member" />
             <h4>Atwood Johnson</h4>
             <h3>Illustrator</h3>
           </TeamMember>
           <TeamMember style={{ animationDelay: "2s" }}>
-            <img src="/assets/image/home-man4.png" alt="team member" />
+            <img src="/assets/dokesis/dokesi5.png" alt="team member" />
             <h4>Joseph Anderson</h4>
             <h3>Lead Developer</h3>
           </TeamMember>
           <TeamMember>
-            <img src="/assets/image/home-man5.png" alt="team member" />
+            <img src="/assets/dokesis/dokesi4.png" alt="team member" />
             <h4>Rhodes Hernández</h4>
             <h3>Front-end Developer</h3>
           </TeamMember>
           <TeamMember style={{ animationDelay: "2s" }}>
-            <img src="/assets/image/home-man6.png" alt="team member" />
+            <img src="/assets/dokesis/dokesi3.png" alt="team member" />
             <h4>Keanu Davis</h4>
             <h3>Social Media Manager</h3>
           </TeamMember>
