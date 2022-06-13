@@ -13,3 +13,5 @@ metaboss decode mint --account HS42WQSjLHRwMSr3cfxKByqySYQHfgiNrL4ZBiwyazQC -o .
 metaboss decode mint --list-file ./snapshot/7eQYiE6Gvv1fsoLaF5HSSmuWA8MGdnU42o7iBs93SigH_mint_accounts.json -o ./snapshot
 
 metaboss update uri --keypair ~/.config/solana/devnet.json --account HS42WQSjLHRwMSr3cfxKByqySYQHfgiNrL4ZBiwyazQC --new-uri https://gateway.pinata.cloud/ipfs/QmPochZCarisNknHy6hRMHV3L8vnqwMMWZPChGrTZruAZn/1.json
+
+ts-node C:/Users/Administrator/metaplex/js/packages/cli/src/candy-machine-v2-cli.ts update_candy_machine -e mainnet-beta --rpc-url https://broken-broken-frost.solana-mainnet.quiknode.pro/9e6fcc4860ba30e382a6be3ccbe1455348fc81cb/ -k c:/Dokesi/candy-machine/keys/secret.json -cp config_mid.json -c dokesi
