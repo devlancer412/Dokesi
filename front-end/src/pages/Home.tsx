@@ -1216,14 +1216,14 @@ const Home = () => {
         <h5>
           <RedSpane>About US</RedSpane>
         </h5>
-        <h1>About dokesi.io</h1>
+        <h1>About dokesi.art</h1>
         <p>
           This is the lair of the faceless spirit skulls. The more time you
           spend here, the more thrilling your experience will be
         </p>
         <AboutBox>
           <h4>
-            <RedSpane>dokesi.io</RedSpane>
+            <RedSpane>dokesi.art</RedSpane>
           </h4>
           <p>
             Dokesi is a PFP designed for short film animation. It launches 6,668
@@ -1344,7 +1344,7 @@ const Home = () => {
         <BackMan2 src="/assets/image/back-man1.png" />
         <BackLetterView>
           <BackLetterPane>
-            <span>dokesi.io dokesi.io dokesi.io</span>
+            <span>dokesi.art dokesi.art dokesi.art</span>
           </BackLetterPane>
         </BackLetterView>
         <h5>
@@ -1422,23 +1422,27 @@ const Home = () => {
         <h5>
           <RedSpane>About us</RedSpane>
         </h5>
-        <h1>Dokesi.io Team</h1>
+        <h1>Dokesi.art Team</h1>
         <MemberContainer>
           <TeamMember>
             <img src="/assets/image/home-man3.png" alt="team member" />
-            <h4>Team Hero</h4>
+            <h4>Atwood Johnson</h4>
+            <h3>Illustrator</h3>
           </TeamMember>
           <TeamMember style={{ animationDelay: "2s" }}>
             <img src="/assets/image/home-man4.png" alt="team member" />
-            <h4>Team Hero</h4>
+            <h4>Joseph Anderson</h4>
+            <h3>Lead Developer</h3>
           </TeamMember>
           <TeamMember>
             <img src="/assets/image/home-man5.png" alt="team member" />
-            <h4>Team Hero</h4>
+            <h4>Rhodes Hernández</h4>
+            <h3>Front-end Developer</h3>
           </TeamMember>
           <TeamMember style={{ animationDelay: "2s" }}>
             <img src="/assets/image/home-man6.png" alt="team member" />
-            <h4>Team Hero</h4>
+            <h4>Keanu Davis</h4>
+            <h3>Social Media Manager</h3>
           </TeamMember>
         </MemberContainer>
       </TeamContainer>

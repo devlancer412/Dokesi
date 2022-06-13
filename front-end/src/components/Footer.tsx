@@ -116,17 +116,35 @@ const Footer = () => {
               className={classes.navlinks}
               style={matchesXS ? { margin: "auto" } : {}}
             >
-              <a href="#" style={{ position: "relative" }}>
+              <a href="https://magiceden.io/" style={{ position: "relative" }}>
                 <div className={classes.linkshadow} />
-                <img src="/assets/icon/ship.png" className={classes.link} />
+                <img
+                  src="/assets/icon/ship.png"
+                  className={classes.link}
+                  alt="Magic Eden"
+                />
               </a>
-              <a href="#" style={{ position: "relative" }}>
+              <a
+                href="https://twitter.com/Dokesi_NFTs"
+                style={{ position: "relative" }}
+              >
                 <div className={classes.linkshadow} />
-                <img src="/assets/icon/twitter.png" className={classes.link} />
+                <img
+                  src="/assets/icon/twitter.png"
+                  className={classes.link}
+                  alt="Twitter"
+                />
               </a>
-              <a href="#" style={{ position: "relative" }}>
+              <a
+                href="https://discord.gg/zG5GPSMVMB"
+                style={{ position: "relative" }}
+              >
                 <div className={classes.linkshadow} />
-                <img src="/assets/icon/discord.png" className={classes.link} />
+                <img
+                  src="/assets/icon/discord.png"
+                  className={classes.link}
+                  alt="Discord"
+                />
               </a>
             </div>
           </div>

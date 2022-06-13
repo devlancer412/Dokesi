@@ -1056,7 +1056,7 @@ const Mint = (props: MintProps) => {
               display="block"
               style={{ marginTop: 7, color: "grey" }}
             >
-              Powered by Dokesi.io
+              Powered by Dokesi.art
             </Typography>
           </MintBox>
         </RightBox>
