@@ -1,1 +1,28 @@
-{"price":1.5,"number":2000,"gatekeeper":null,"solTreasuryAccount":"BA4cUKFfA243hxdE9BGHWQhsuYxFwjA5KZZC6yR9cEVu","splTokenAccount":null,"splToken":null,"goLiveDate":"20 June 2022 00:00:00 GMT","endSettings":{"endSettingType":{"amount":true},"value":2000},"whitelistMintSettings":{"mode":{"burnEveryTime":true},"mint":"A8K8fPa3zdhyoMfCno6ABn1LWjKRnWbwDjMAGX85vqfa","presale":true,"discountPrice":1.4},"hiddenSettings":{"name":"Dokesi","symbol":"DKS","uri":"https://dokesi.mypinata.cloud/ipfs/QmWwhQJLf4ZNVcd3xrgiyuwc8wT8UJLcDGYQmT3rbx19su","hash":"8A0173B19A9D8B09F088A3C28FEAC94C"},"storage":"pinata","ipfsInfuraProjectId":null,"ipfsInfuraSecret":null,"awsS3Bucket":null,"noRetainAuthority":false,"noMutable":false}
+{
+  "price": 1.5,
+  "number": 2000,
+  "gatekeeper": null,
+  "solTreasuryAccount": "BA4cUKFfA243hxdE9BGHWQhsuYxFwjA5KZZC6yR9cEVu",
+  "splTokenAccount": null,
+  "splToken": null,
+  "goLiveDate": "20 June 2022 00:00:00 GMT",
+  "endSettings": { "endSettingType": { "amount": true }, "value": 2000 },
+  "whitelistMintSettings": {
+    "mode": { "burnEveryTime": true },
+    "mint": "A8K8fPa3zdhyoMfCno6ABn1LWjKRnWbwDjMAGX85vqfa",
+    "presale": true,
+    "discountPrice": 1.4
+  },
+  "hiddenSettings": {
+    "name": "Dokesi",
+    "symbol": "DKS",
+    "uri": "https://dokesi.mypinata.cloud/ipfs/QmWwhQJLf4ZNVcd3xrgiyuwc8wT8UJLcDGYQmT3rbx19su",
+    "hash": "C31E41940CD12CF9B24B0E528AB955BC"
+  },
+  "storage": "pinata",
+  "ipfsInfuraProjectId": null,
+  "ipfsInfuraSecret": null,
+  "awsS3Bucket": null,
+  "noRetainAuthority": false,
+  "noMutable": false
+}

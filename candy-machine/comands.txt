@@ -14,4 +14,10 @@ metaboss decode mint --list-file ./snapshot/7eQYiE6Gvv1fsoLaF5HSSmuWA8MGdnU42o7i
 
 metaboss update uri --keypair ~/.config/solana/devnet.json --account HS42WQSjLHRwMSr3cfxKByqySYQHfgiNrL4ZBiwyazQC --new-uri https://gateway.pinata.cloud/ipfs/QmPochZCarisNknHy6hRMHV3L8vnqwMMWZPChGrTZruAZn/1.json
 
-ts-node C:/Users/Administrator/metaplex/js/packages/cli/src/candy-machine-v2-cli.ts update_candy_machine -e mainnet-beta --rpc-url https://broken-broken-frost.solana-mainnet.quiknode.pro/9e6fcc4860ba30e382a6be3ccbe1455348fc81cb/ -k c:/Dokesi/candy-machine/keys/secret.json -cp config_mid.json -c dokesi
+ts-node C:/Users/Administrator/metaplex/js/packages/cli/src/candy-machine-v2-cli.ts update_candy_machine -e mainnet-beta --rpc-url https://late-little-shape.solana-mainnet.quiknode.pro/31ed5f413159c2d626180d80cc60540faf2cb9e4/ -k c:/Dokesi/candy-machine/keys/secret.json -cp config_ultra.json -c dokesi
+
+ts-node C:/Users/Administrator/metaplex/js/packages/cli/src/candy-machine-v2-cli.ts verify_upload  -e mainnet-beta --rpc-url https://broken-broken-frost.solana-mainnet.quiknode.pro/9e6fcc4860ba30e382a6be3ccbe1455348fc81cb/ -k c:/Dokesi/candy-machine/keys/secret.json -c dokesi
+
+https://magiceden.io/marketplace/dkst
+
+ts-node C:/Users/Administrator/metaplex/js/packages/cli/src/candy-machine-v2-cli.ts upload -e mainnet-beta --rpc-url https://late-little-shape.solana-mainnet.quiknode.pro/31ed5f413159c2d626180d80cc60540faf2cb9e4/ -k C:/Dokesi/candy-machine/keys/secret.json -cp config_pre.json -c dokesi ./assets_default

@@ -1,18 +1,19 @@
 require("dotenv").config();
 const fs = require("fs");
 const os = require("os");
-const candyMachine = require(`../.cache/${process.env.NET_NAME}-${process.env.CANDY_MACHINE_NAME}.json`);
+const candyMachine = require(`./.cache/${process.env.NET_NAME}-${process.env.CANDY_MACHINE_NAME}.json`);
 
-const { runCommand } = require("../utils/cmd");
+const { runCommand } = require("./utils/cmd");
 
 const homeDir = os.homedir();
 const gName = process.env.NFT_NAME;
-const keyPairPath = process.cwd().replaceAll("\\", "/") + process.env.SECRETKEY_PATH;;
+const keyPairPath =
+  process.cwd().replace(/\\/gi, "/") + process.env.SECRETKEY_PATH;
 const rpcUrl = process.env.RPC_URL;
 const imageDirUrl = process.env.METADATA_DIR_PATH + "/";
 
 (async () => {
-  let cmd = `metaboss derive cmv2-creator ${candyMachine.program.candyMachine} -r ${rpcUrl}`;
+  let cmd = `metaboss derive cmv2-creator ${candyMachine.program.candyMachine} -r ${rpcUrl} -T 600`;
 
   console.log("Getting creator of candy machine...");
   let result = await runCommand(cmd);
@@ -26,11 +27,11 @@ const imageDirUrl = process.env.METADATA_DIR_PATH + "/";
 
   console.log("Creator:", creator);
 
-  cmd = `metaboss snapshot mints --creator ${creator} -o ./snapshot -r ${rpcUrl}`;
+  cmd = `metaboss snapshot mints --creator ${creator} -o ./snapshot -r ${rpcUrl} -T 600`;
   console.log("Getting all mints...");
   result = await runCommand(cmd);
 
-  cmd = `metaboss decode mint --list-file ./snapshot/${creator}_mint_accounts.json -o ./snapshot`;
+  cmd = `metaboss decode mint --list-file ./snapshot/${creator}_mint_accounts.json -o ./snapshot -T 600`;
   console.log("Decoding mints....");
   result = await runCommand(cmd);
 
@@ -38,7 +39,7 @@ const imageDirUrl = process.env.METADATA_DIR_PATH + "/";
   const accounts = require(`./snapshot/${creator}_mint_accounts.json`);
 
   for (const account of accounts) {
-    if (revealedAccounts.filter((revealed) => revealed === account).length) {
+    if (revealedAccounts.indexOf(account) >= 0) {
       continue;
     }
 
@@ -52,7 +53,7 @@ const imageDirUrl = process.env.METADATA_DIR_PATH + "/";
 
     cmd = `metaboss update uri --keypair ${keyPairPath} --account ${account} --new-uri ${
       imageDirUrl + number
-    }.json`;
+    }.json -T 600`;
 
     result = await runCommand(cmd);
 
