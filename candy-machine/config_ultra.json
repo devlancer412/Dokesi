@@ -1,12 +1,12 @@
 {
   "price": 1.5,
-  "number": 2000,
+  "number": 1526,
   "gatekeeper": null,
   "solTreasuryAccount": "BA4cUKFfA243hxdE9BGHWQhsuYxFwjA5KZZC6yR9cEVu",
   "splTokenAccount": null,
   "splToken": null,
   "goLiveDate": "20 June 2022 00:00:00 GMT",
-  "endSettings": { "endSettingType": { "amount": true }, "value": 2000 },
+  "endSettings": { "endSettingType": { "amount": true }, "value": 1526 },
   "whitelistMintSettings": {
     "mode": { "burnEveryTime": true },
     "mint": "A8K8fPa3zdhyoMfCno6ABn1LWjKRnWbwDjMAGX85vqfa",
@@ -17,7 +17,7 @@
     "name": "Dokesi",
     "symbol": "DKS",
     "uri": "https://dokesi.mypinata.cloud/ipfs/QmWwhQJLf4ZNVcd3xrgiyuwc8wT8UJLcDGYQmT3rbx19su",
-    "hash": "C31E41940CD12CF9B24B0E528AB955BC"
+    "hash": "31155db138f7cfed8ce7e20d49f4a29b"
   },
   "storage": "pinata",
   "ipfsInfuraProjectId": null,
