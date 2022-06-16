@@ -116,7 +116,10 @@ const Footer = () => {
               className={classes.navlinks}
               style={matchesXS ? { margin: "auto" } : {}}
             >
-              <a href="https://magiceden.io/" style={{ position: "relative" }}>
+              <a
+                href="https://magiceden.io/marketplace/dkst"
+                style={{ position: "relative" }}
+              >
                 <div className={classes.linkshadow} />
                 <img
                   src="/assets/icon/ship.png"

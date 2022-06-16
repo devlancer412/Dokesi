@@ -20,6 +20,9 @@ const theme = createTheme({
     fontFamily: ["LondrinaSolidBlack"].join(","),
     fontWeight: ["300", "500", "700", "900"].join(","),
   },
+  palette: {
+    type: "dark",
+  },
   overrides: {
     MuiCssBaseline: {
       "@global": {

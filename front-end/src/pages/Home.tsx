@@ -199,33 +199,6 @@ const ConnectButton = styled.div`
   }
 `;
 
-const BBButton = styled.div`
-  position: absolute;
-  box-sizing: border-box;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  background: transparent;
-  color: rgba(white, 0.7);
-  box-shadow: inset 0 0 0 1px rgba(white, 0.5);
-
-  &::after {
-    box-sizing: border-box;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    content: "";
-    margin: -1px;
-    box-shadow: inset 0 0 0 2px;
-    animation: ${BorderKeyFrame(20, 150)} 2s ease-in-out infinite alternate;
-    border-radius: 5px;
-  }
-`;
-
 const RedSpane = styled.span`
   color: red;
 `;

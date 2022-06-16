@@ -23,8 +23,8 @@ export const CTAButton = styled(Button)`
   font-size: 20px;
   font-weight: 900;
   box-shadow: none;
+  background-color: transparent !important;
   &:hover {
-    background-color: transparent;
     cursor: pointer;
     box-shadow: none;
   }

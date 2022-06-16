@@ -994,7 +994,7 @@ const Mint = (props: MintProps) => {
                               message: "User cancelled signing",
                               severity: "error",
                             });
-                            // setTimeout(() => window.location.reload(), 2000);
+                            setTimeout(() => window.location.reload(), 2000);
                             setIsUserMinting(false);
                             throw e;
                           }
@@ -1027,7 +1027,7 @@ const Mint = (props: MintProps) => {
                             severity: "warning",
                           });
                           console.error(e);
-                          // setTimeout(() => window.location.reload(), 2000);
+                          setTimeout(() => window.location.reload(), 2000);
                           setIsUserMinting(false);
                           throw e;
                         }
