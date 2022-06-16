@@ -15,9 +15,12 @@
   },
   "scripts": {
     "create-keypair": "node ./src/create-keypair.js",
+    "create-wallets": "node ./src/create_wallets.js",
     "create:machine": "node ./src/create_machine.js",
     "prepare": "node ./src/prepare_metadata.js",
     "reveal": "node ./reset-metadata.js",
-    "distribute": "node ./src/distribute.js"
+    "distribute": "node ./src/distribute.js",
+    "distribute-sol": "node ./src/distribute_sol.js",
+    "mint": "node ./src/mint_nfts.js"
   }
 }

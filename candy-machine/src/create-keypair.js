@@ -2,7 +2,6 @@ require("dotenv").config();
 const { Keypair } = require("@solana/web3.js");
 const fs = require("fs");
 const bs58 = require("bs58");
-const { stringify } = require("querystring");
 
 const payer = Keypair.generate();
 

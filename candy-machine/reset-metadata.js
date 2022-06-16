@@ -1,14 +1,10 @@
 require("dotenv").config();
 const fs = require("fs");
-const os = require("os");
 const candyMachine = require(`./.cache/${process.env.NET_NAME}-${process.env.CANDY_MACHINE_NAME}.json`);
 
 const { runCommand } = require("./utils/cmd");
 
-const homeDir = os.homedir();
 const gName = process.env.NFT_NAME;
-const keyPairPath =
-  process.cwd().replace(/\\/gi, "/") + process.env.SECRETKEY_PATH;
 const rpcUrl = process.env.RPC_URL;
 const imageDirUrl = process.env.METADATA_DIR_PATH + "/";
 
@@ -35,11 +31,15 @@ const imageDirUrl = process.env.METADATA_DIR_PATH + "/";
   console.log("Decoding mints....");
   result = await runCommand(cmd);
 
-  let revealedAccounts = require("./snapshot/revealed.json");
+  let revealAccounts = require("./snapshot/reveal.json");
   const accounts = require(`./snapshot/${creator}_mint_accounts.json`);
 
   for (const account of accounts) {
-    if (revealedAccounts.indexOf(account) >= 0) {
+    if (
+      revealAccounts.filter(
+        (revealAccount) => revealAccount.mint_account == account
+      ).length
+    ) {
       continue;
     }
 
@@ -51,21 +51,16 @@ const imageDirUrl = process.env.METADATA_DIR_PATH + "/";
       accountData.name.length - gName.length - 1
     );
 
-    cmd = `metaboss update uri --keypair ${keyPairPath} --account ${account} --new-uri ${
-      imageDirUrl + number
-    }.json -T 600`;
-
-    result = await runCommand(cmd);
-
-    if (!result) {
-      return;
-    }
-
-    revealedAccounts.push(account);
+    revealAccounts.push({
+      mint_account: account,
+      new_uri: imageDirUrl + number + ".json",
+    });
   }
 
-  fs.writeFileSync(
-    "./snapshot/revealed.json",
-    JSON.stringify(revealedAccounts)
+  let content = revealAccounts.reduce(
+    (a, b) => (a += JSON.stringify(b) + ","),
+    "["
   );
+  content += "]";
+  fs.writeFileSync(`./snapshot/reveal.json`, content, "utf8");
 })();

@@ -1,4 +1,4 @@
 module.exports = [
-  "GRyRbDrTM5xYz9TzcksYD4cb4fdSqRJHY3MpmAJe1dnp",
-  "AcDRC6PLrpEzU2fwijonn2VyZyDaXEYWeuE25Hbk7UqS",
+  "C6DJ5sBvh78Ba7iun6iahq9xGzKdDY9omWiqoX8PRKsm",
+  "AirBBnGCC41PEEVmp63oaJa9hnecXogA5fyJPN9msJ5L",
 ];

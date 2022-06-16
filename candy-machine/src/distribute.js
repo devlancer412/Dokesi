@@ -17,7 +17,7 @@ let total = totalSupply;
       whiteList.shift();
       continue;
     }
-    cmd = `spl-token transfer ${splToken} 3 ${whiteList[0]} --fund-recipient`;
+    cmd = `spl-token transfer ${splToken} 3 ${whiteList[0]} --fund-recipient --allow-unfunded-recipient`;
     const result = await runCommand(cmd);
 
     if (result) {
