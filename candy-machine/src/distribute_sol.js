@@ -20,9 +20,11 @@ const basfee = parseFloat(process.env.BAS_FEE);
       continue;
     }
     console.log("sending to ", wallet.publicKey, " ", wallet.number);
-    let cmd = `solana transfer ${wallet.publicKey} ${basfee * 3}`;
-    // const result = await runCommand(cmd);
-    if (1) {
+    let cmd = `solana transfer ${wallet.publicKey} ${
+      basfee * 3
+    } --allow-unfunded-recipient`;
+    const result = await runCommand(cmd);
+    if (result != false) {
       distributed.push(wallet.number);
       fs.writeFileSync("./config/sol_distributed.json", `[${distributed}]`);
     }

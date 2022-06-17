@@ -27,33 +27,17 @@ const imageDirUrl = process.env.METADATA_DIR_PATH + "/";
   console.log("Getting all mints...");
   result = await runCommand(cmd);
 
-  cmd = `metaboss decode mint --list-file ./snapshot/${creator}_mint_accounts.json -o ./snapshot -T 600`;
-  console.log("Decoding mints....");
-  result = await runCommand(cmd);
+  // cmd = `metaboss decode mint --list-file ./snapshot/${creator}_mint_accounts.json -o ./snapshot -T 600`;
+  // console.log("Decoding mints....");
+  // result = await runCommand(cmd);
 
   let revealAccounts = require("./snapshot/reveal.json");
   const accounts = require(`./snapshot/${creator}_mint_accounts.json`);
 
-  for (const account of accounts) {
-    if (
-      revealAccounts.filter(
-        (revealAccount) => revealAccount.mint_account == account
-      ).length
-    ) {
-      continue;
-    }
-
-    console.log("Fetching account:", account);
-
-    const accountData = require(`./snapshot/${account}.json`);
-    const number = accountData.name.substr(
-      gName.length + 1,
-      accountData.name.length - gName.length - 1
-    );
-
+  for (const i in accounts) {
     revealAccounts.push({
-      mint_account: account,
-      new_uri: imageDirUrl + number + ".json",
+      mint_account: accounts[i],
+      new_uri: imageDirUrl + i + ".json",
     });
   }
 
