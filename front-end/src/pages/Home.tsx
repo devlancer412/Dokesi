@@ -1163,9 +1163,9 @@ const Home = () => {
     setFaqIndex(index);
   };
 
-  const goToMint = () => {
-    navigate("/mint");
-  };
+  // const goToMint = () => {
+  //   navigate("/mint");
+  // };
   return (
     <>
       <HomeContainer id="home">
@@ -1178,10 +1178,10 @@ const Home = () => {
             This is a place to share fun anecdotes from life. The more time you
             spend, the more exhilarating the experience will be.
           </p>
-          <ConnectButton onClick={goToMint}>
-            {/* <BBButton /> */}
+          <ConnectButton>Mint Finished</ConnectButton>
+          {/* <ConnectButton onClick={goToMint}>
             Mint Now
-          </ConnectButton>
+          </ConnectButton> */}
         </TitlePart>
         <HomeMan src="/assets/image/home-man1.png" />
       </HomeContainer>

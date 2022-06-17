@@ -71,7 +71,7 @@ const App = () => {
                 <Navbar />
                 <Routes>
                   <Route path="/" element={<Home />} />
-                  <Route
+                  {/* <Route
                     path="/mint"
                     element={
                       <Mint
@@ -81,7 +81,7 @@ const App = () => {
                         rpcHost={rpcHost}
                       />
                     }
-                  />
+                  /> */}
                 </Routes>
                 <Footer />
               </Paper>
